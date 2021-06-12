@@ -1,0 +1,24 @@
+<html>
+    <script>
+       var arr =[1,120,13,100,60,99];
+       
+       var max = arr[0];
+       for(var i=1;i< arr.length;i++)
+       {
+           if(max< arr[i])
+           {
+               max = arr[i];
+           }
+       }
+       console.log("Max is ",max);
+       console.log("Max is ", Math.max.apply(null,arr));
+
+       var a = undefined;
+
+       if( !a)
+       {
+           a  = {};
+       }
+       a = a || {};
+    </script>
+</html>
