@@ -1,0 +1,27 @@
+<html>
+    <script>
+       var arr =[1,120,13,100,60,99];
+       
+       var sum = 0;
+       for(var i=0;i< arr.length;i++)
+       {
+           if(arr[i] %2 !=0)
+           {
+               sum += arr[i];
+           }
+       }
+       console.log("Sum by imperative to all odd ",sum);
+
+       /*
+       function isEven(num)
+       {
+           return num %2 ==0;
+       }
+       */
+       let isEven= (num)=>num%2 == 0;
+       let isOdd = (num)=> !isEven(num);
+       let fpSum = arr.filter(isOdd)
+                      .reduce((a,b)=>a+b);
+       console.log("FP sum ",fpSum);               
+    </script>
+</html>

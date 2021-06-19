@@ -1,0 +1,32 @@
+<html>
+    <script>
+        /*
+        1 can be assigned to variable
+        2 can pass as parameter
+        3 can be returend from function
+        */
+        var hello = function()
+        {
+            console.log("Hello");
+        }
+        hello();
+        function one()
+        {
+            console.log("One called");
+        }
+        //Rule 2
+        function acceptFun(fun)
+        {
+            console.log("Accept fun called");
+            fun();
+        }
+        acceptFun(one);
+        acceptFun(hello);
+        //Rule 3
+        function getFun()
+        {
+            return one;
+        }
+        getFun()();
+    </script>
+</html>
