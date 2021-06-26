@@ -1,0 +1,16 @@
+<html>
+    <script>
+       let field = "age";
+       let json = {};
+       let age = 36;
+       json[field] = `${age}`;
+       console.log('JSON ',json);
+
+       let template = `
+       <html>
+        <body>${json.age}</body>
+       </html>
+       `
+       console.log(template);
+    </script>
+</html>
