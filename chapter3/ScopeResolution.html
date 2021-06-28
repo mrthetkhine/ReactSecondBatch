@@ -1,0 +1,21 @@
+<html>
+    <script>
+        var a = "Global a";
+        let b = "Main B";
+
+        function hello()
+        {
+            console.log(" A is ",a);
+            var a = "local a";
+            console.log(" A after declaration ",a);
+
+            console.log("B is ",b);
+            //let b = "local b";
+
+            console.log("B is ",b);
+        }
+        hello();
+        
+    </script>
+   
+</html>

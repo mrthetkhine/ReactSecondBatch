@@ -1,0 +1,44 @@
+<html>
+    <script>
+        /*
+        Declare with var outside any function
+        Undeclared variable but assigned in any place
+        */
+        //Function scope
+        if(false)
+        {
+            var c;
+        }
+        console.log("C is ",c);
+        if(true)
+        {
+            {
+                let d;
+                d = 300;
+
+                console.log("D inside block ",d);
+            }
+            ///console.log("d is ",d);
+        }
+        ///console.log("D is ",d);
+        
+        function hello()
+        {
+            let a = 10;
+            console.log("A inside hello ",a);
+
+            if( false)
+            {
+                let b ="Hello";
+                console.log(" B inside ");
+            }
+            b = 200;//Golbal variable
+            console.log("B is ",b);
+        }
+        hello();
+        //console.log("A outside function ",a);
+        console.log("global b ",b);
+        
+    </script>
+   
+</html>

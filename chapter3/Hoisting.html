@@ -1,0 +1,16 @@
+<html>
+    <script>
+      console.log("B is ",b);
+      function hello()
+      { //var a;//Hoisting
+          
+          console.log("A is ",a);
+          let a = 10;//No hoisting for let & const;
+      }
+      hello();
+      console.log("A is ",a);
+
+      var b = "Hello";
+    </script>
+   
+</html>

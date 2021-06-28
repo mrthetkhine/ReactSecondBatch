@@ -1,0 +1,30 @@
+<html>
+    <script>
+        /*
+        Declare with var outside any function
+        Undeclared variable but assigned in any place
+        */
+        //Global scope
+        let a = 100;
+        console.log("Script one ",a);
+
+        const b = 200;//Global scope
+        console.log("Script one b ",b);
+
+        function hello()
+        {
+            c = 300;
+        }
+        hello();
+        console.log("Script one c ",c);
+    </script>
+    <body>
+        Hello Scope
+    </body>
+    <script>
+         console.log("Script two ",a);
+         console.log("Script two b ",b);
+         console.log("Script two c ",b);
+    </script>
+    <script src="script3.js"></script>
+</html>
