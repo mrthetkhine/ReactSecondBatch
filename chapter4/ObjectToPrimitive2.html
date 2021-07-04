@@ -1,0 +1,26 @@
+<html>
+    <script>
+      
+
+       let obj = {
+           toString:function()
+           {
+               console.log("To String invoked");
+               return "10";
+           },
+           valueOf:function()
+           {
+               console.log("Value of invoked");
+               return 5;
+           }
+       };
+       console.log("Obj+3 ",obj*3);
+       console.log("Obj+'3' ",obj+"3");
+       console.log("Obj+'3' ",'3'+obj);
+
+       console.log("+obj ", (+obj));
+       console.log("obj ", (+obj));
+       //console.log("obj "+!!obj);
+    </script>
+   
+</html>

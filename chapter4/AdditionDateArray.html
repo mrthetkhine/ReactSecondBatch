@@ -1,0 +1,25 @@
+<html>
+    <script>
+       let arr = [10,2];
+       console.log("arr + 3 ", arr+3);//'10'+3 =>'103'
+
+       let date = new Date();
+       console.log("date+date ", date + 3);
+       console.log("date.valueOf typeof "+  date.valueOf());
+
+       let obj = {
+           toString:function()
+           {
+               console.log("To String invoked");
+               return 10;
+           },
+           valueOf:function()
+           {
+               console.log("Value of invoked");
+               return 5;
+           }
+       };
+       console.log("Obj+3 ",obj+3);
+    </script>
+   
+</html>

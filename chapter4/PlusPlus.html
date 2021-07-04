@@ -1,0 +1,29 @@
+<html>
+    <script>
+  
+        let a = 5;
+        let obj = {
+            toString:function()
+            {
+                console.log("To String invoked");
+                return "10";
+            },
+            valueOf:function()
+            {
+                console.log("Value of invoked");
+                return new String("5");
+            }
+        };
+       //++obj;
+       //++5;
+       obj --;
+       console.log("Obj + 3 ", obj+3);
+       console.log("valueof ", obj.valueOf());
+       console.log("a is ",a);
+
+       let obj2 = {};
+       ++obj2;
+       console.log("Obj2 ",obj2);
+    </script>
+   
+</html>

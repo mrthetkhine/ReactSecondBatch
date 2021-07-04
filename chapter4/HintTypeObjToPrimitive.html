@@ -1,0 +1,26 @@
+<html>
+    <script>
+      
+        let date = new Date();
+        console.log("date.valueOf "+ date.valueOf());
+        console.log("date.toString "+ date.toString());
+
+        console.log("date +date "+ (date+date));
+       let obj = {
+           toString:function()
+           {
+               console.log("To String invoked");
+               return "10";
+           },
+           valueOf:function()
+           {
+               console.log("Value of invoked");
+               return 5;
+           }
+       };
+       console.log("Obj+3 ",obj*3);
+     
+       //console.log("obj "+!!obj);
+    </script>
+   
+</html>

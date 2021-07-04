@@ -1,0 +1,49 @@
+<html>
+    <script>
+       
+
+     let obj = {
+         valueOf:function()
+         {
+             console.log("Value of method invoked");
+             return 5;
+         }
+     };
+     let obj2 = {
+        toString:function()
+        {
+            console.log("Value of toString invoked");
+            return 10;
+        }
+     };
+     let obj3 = {
+        valueOf:function()
+         {
+             console.log("Obj3 Value of method invoked");
+             return obj;
+         },
+        toString:function()
+        {
+            console.log("Obj3 Value of toString invoked");
+            return 10;
+        }
+     };
+     let obj4 = {
+        valueOf:function()
+         {
+             console.log("Obj4 Value of method invoked");
+             return obj;
+         },
+        toString:function()
+        {
+            console.log("Obj4 Value of toString invoked");
+            return obj2;
+        }
+     }; 
+     console.log("obj + 3 ", obj+3);//Object to primitive conversion
+     console.log("obj2 + obj2 ", obj2+obj2);
+     console.log("obj2 + obj3 ", obj2+obj3);
+     console.log("obj2 + obj4 ", obj2+obj4);
+    </script>
+   
+</html>
