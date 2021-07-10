@@ -1,0 +1,31 @@
+<html>
+    <script>
+        
+      let obj = {
+          name : "TK",
+          age : undefined,
+      };
+      console.log("name in obj ", "name" in obj);
+      console.log("age in obj ", "age" in obj);
+      console.log("age in obj ", "something" in obj);
+      console.log("toString in obj ", "toString" in obj);
+      console.log("toString ",obj.toString());
+
+      var field ="age";
+      console.log("field in obj ", field in obj);
+      /*
+      let name = "Hello";
+      console.log("Name ",name);
+      */
+
+      let arr = [10,20,30]; //arr[0] => 10
+      console.log("0" in arr);
+      console.log(1 in arr);
+
+      if( obj["age"]) // value
+      {
+          console.log("Age have some truthy value");
+      }
+    </script>
+   
+</html>

@@ -1,0 +1,27 @@
+<html>
+    <script>
+        //a && b
+        /*
+        if a is truthy return b; 
+        if a is falsy return a;
+        */
+      function truthy()
+      {
+          console.log("Truthy ");
+          return true;
+      }
+      function falsy()
+      {
+          console.log("Falsy");
+          return false;
+      }
+      console.log(" truthy() && truthy() ", truthy() && truthy());
+      console.log(" truthy() && falsy() ", truthy() && falsy());
+
+      console.log(" falsy() && truthy() ", falsy() && truthy());
+      console.log(" falsy() && falsy() ", falsy() && falsy());
+
+      console.log(" falsy() & falsy() ", falsy() & falsy());
+    </script>
+   
+</html>

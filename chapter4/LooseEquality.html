@@ -1,0 +1,41 @@
+<html>
+    <script>
+      //Boolean => Number=> compare
+      //String=> Number => compare  
+      console.log( '3==3 ', 3==3);//Rule 1
+      console.log('null == undefined ', null== undefined);//2
+      console.log('undefined == null ', undefined== null);//3
+
+      console.log("'3'==3 ", '3'==3); //5
+      console.log(" 3=='3' ", 3=='3'); //6
+
+      let bigInt = BigInt(3);
+      console.log('bigInt == "3"' ,bigInt=="3"); //7
+      console.log('3 == bigInt' ,"3"==bigInt); //8
+
+      console.log('true == 1',true == 'true'); 
+      //true == 'true'
+      //Apply rule 9 convert x to Number => 1== 'true'   
+      //Apply rule 5  x,ToNumber(y) => 1 == NaN  
+      //1 ==NaN = false              
+        
+      console.log('"true" == true','true' == true); 
+
+      console.log(" ''==false ", ''==false ); 
+
+      console.log('0 == false ', 0== false);
+
+      let obj = {
+          valueOf : function()
+          {
+              return 4;
+          }
+      }
+      console.log("obj == 4 ", obj == 4 );//Rule 11
+      console.log("4 == obj ", 4 == obj ); //Rule 12
+      console.log("+infinity == 3 ", Number.POSITIVE_INFINITY == 3 ); //Rule 13
+      console.log("undefined == false ", undefined==false)//Rule 15
+      console.log("0 == false ", 0==false);
+    </script>
+   
+</html>

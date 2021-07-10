@@ -1,0 +1,18 @@
+<html>
+    <script>
+       function getTrue()
+       {
+            console.log("get True");
+            return true;
+       }
+       function getFalse()
+       {
+           console.log("get false");
+           return false;
+       }
+       let result = getFalse() && getTrue(); //boolean shortcircuit AND
+
+       result = getFalse() & getTrue();
+    </script>
+   
+</html>

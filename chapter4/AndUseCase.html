@@ -1,0 +1,24 @@
+<html>
+    <script>
+       let needToGoOut = true;
+       let ranining = true;
+
+       let needToBringUnbrella = needToGoOut && ranining;
+       
+       console.log("Need to go out ",needToGoOut);
+       console.log("Raining ",ranining);
+       console.log(" Need to brin unbrella ",needToBringUnbrella);
+
+       function takeUnbrella()
+       {
+           console.log("Take unbrealla");
+       }
+       /*
+       if( needToBringUnbrella )
+       {
+            takeUnbrella();
+       }*/
+       needToBringUnbrella && takeUnbrella();
+    </script>
+   
+</html>

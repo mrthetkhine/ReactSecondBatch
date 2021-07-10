@@ -1,0 +1,25 @@
+<html>
+    <script>
+     let isMonk = false;
+     let isShaveHead = true;
+     let noHair = isMonk || isShaveHead;
+     
+     console.log("No Hair ", noHair);
+
+     /*
+     if(!window.myModule)
+     {
+         window.myModule = {};
+     }*/
+     window.myModule = window.myModule || {};
+
+     function say(msg)
+     {
+         msg = msg || "Hello";
+         console.log(msg);
+     }
+     say("How are you");
+     say();
+    </script>
+   
+</html>

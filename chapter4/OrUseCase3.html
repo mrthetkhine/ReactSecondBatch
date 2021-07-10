@@ -1,0 +1,19 @@
+<html>
+    <script>
+        let def = {
+            color : 'red',
+
+        }
+        function plugin(data)
+        {
+            data.color = data.color || def.color;
+
+            console.log("Data ",data);
+        }
+        plugin({
+            color: 'blue'
+        })
+        plugin({});
+    </script>
+   
+</html>
