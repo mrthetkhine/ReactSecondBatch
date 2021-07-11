@@ -1,0 +1,34 @@
+<html>
+    <script>
+        let obj1 = {
+            name : "Mg Mg",
+            age : 10
+        };
+        let obj2 = {
+            name : "Aung Aung",
+            age : 20
+        };
+        console.log("Obj1 ",obj1);
+        console.log("Obj2 ",obj2);
+
+        obj1 = obj2; //copy memeory address, reference handle.
+        obj1.name = "Change";
+        console.log("===========");
+        console.log("Obj1 ",obj1);
+        console.log("Obj2 ",obj2);
+
+        obj2 = {
+            name : "Jame Bonds",
+            age : 100
+        };
+        console.log("===========");
+        console.log("Obj1 ",obj1);
+        console.log("Obj2 ",obj2);
+
+        obj1.name = "Another One";
+        console.log("===========");
+        console.log("Obj1 ",obj1);
+        console.log("Obj2 ",obj2);
+    </script>
+   
+</html>
