@@ -1,0 +1,32 @@
+<html>
+    <script>
+        let num = 1;
+       
+        switch(num)
+        {      
+            case 1:
+                console.log("It is one");
+                break;
+            case 2:
+                console.log("It is two");
+                break;
+            case 3:
+                 console.log("One or Two or Three");
+            break;
+            default:
+                console.log("Not one two three");
+            break;
+        };
+
+        let mapping = {
+            '1': "It is one",
+            "2":"It is two",
+            "3":"It is two"
+        };
+       let str = mapping[1] || "Not one two three";
+       console.log("Str ",str);
+       
+       str = mapping[10] || "Not one two three";
+       console.log("Str ",str);
+    </script>
+</html>
