@@ -1,0 +1,23 @@
+<html>
+    <script>
+       
+       another:for(;false;);
+
+       outer:for(let i=0; i< 5;i++)
+       {
+           console.log("Outer loop i ",i);
+           for(let j=0; j < 4; j++)
+           {
+            console.log(" Inner loop j =>",j);
+            if( i==2)
+            {
+                //break outer;
+                continue outer;
+            }
+
+           }
+           
+       }
+       console.log("End of outer loop");
+    </script>
+</html>

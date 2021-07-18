@@ -1,0 +1,22 @@
+<html>
+    <script>
+       let text = "Na na na na na Na Batman";
+       let wordSet = new Set(text.split(" "));
+
+       console.log("WordSet ",wordSet)
+
+       for(let word of wordSet)//Camel case naming convention
+       {
+            console.log("Word ",word);      
+       }
+       
+       let map = new Map([
+           [1,"one"],
+           [2,"two"]
+       ]);
+       for(let [key,value] of map)
+       {
+           console.log("Key ",key, " value ",value);
+       }
+    </script>
+</html>
