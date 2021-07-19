@@ -1,0 +1,14 @@
+<html>
+    <script>
+        let obj = {
+            "name" :"Tk",//Property
+            "age": 36
+        };
+        Object.defineProperty(obj,"me",{
+            value :"Somethig",
+            writable:false
+        });
+        obj.me = "Change";
+        console.log("Obj ",obj);
+    </script>
+</html>

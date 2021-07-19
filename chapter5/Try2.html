@@ -1,0 +1,57 @@
+<html>
+    <script>
+        function doSomething(num)
+        {
+            if(num < 0)
+            {
+                throw new Error("Invalid number "+num);
+            }
+            console.log("Normal function flow");
+            return 1;
+
+        }
+        function another()
+        {
+            try
+            {
+                return doSomething(-1);
+                console.log("After something");
+            }
+            catch(e)
+            {
+                console.log("Exception catched ",e);
+                try
+                {
+                    throw "Hello";
+                }
+                finally
+                {
+                    return 6;
+                }
+                return 2;
+                //throw "Another exception";
+            }
+            finally
+            {
+                console.log("Finally run");
+                /*
+                try
+                {
+                    throw "Hello";
+                }
+                finally
+                {
+                    return 5;
+                }
+                return 3;
+                //throw "Hello";
+                */
+            }
+            console.log("After finally in fuction");
+            return 4;
+        }
+        let k = another();
+        console.log("K is ",k);
+      console.log("After try statement");
+    </script>
+</html>

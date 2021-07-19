@@ -1,0 +1,28 @@
+<html>
+    <script>
+        function doSomething(num)
+        {
+            if(num < 0)
+            {
+                throw new Error("Invalid number "+num);
+            }
+            console.log("Normal function flow");
+
+        }
+      try
+      {
+        doSomething(-1);
+        console.log("After something");
+      }
+      catch(e)
+      {
+          console.log("Exception catched ",e);
+      }
+      finally
+      {
+          console.log("Finally run");
+      }
+      
+      console.log("After try statement");
+    </script>
+</html>

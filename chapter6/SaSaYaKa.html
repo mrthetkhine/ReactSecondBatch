@@ -1,0 +1,20 @@
+<html>
+    <div id="parent">
+        <span>Hello</span>
+        <span>Hello1</span>
+        <span>Hello2</span>
+        <span>Hello3</span>
+    </div>
+   
+    <script>
+        //live dom
+        let parent = document.getElementById("parent");
+        let spans = document.getElementsByTagName("span");
+        
+        for(let i=0,len = spans.length;i< len;i++)
+        {
+            console.log("Spans ",spans[i]);
+            parent.appendChild(document.createElement('span'));
+        }
+    </script>
+</html>
