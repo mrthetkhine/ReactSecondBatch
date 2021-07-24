@@ -1,0 +1,18 @@
+<html>
+    <script>
+        //Object=>
+        let obj = {
+            age : 36
+        };
+        console.log(obj.toString());
+        console.log("Obj ",obj)
+
+        Object.defineProperty(obj,"name",{
+            value : "Tk",
+            writable:false
+        })
+        console.log("Obj.name ",obj.name);
+        obj.name ="Another person"
+        console.log("Obj.name ",obj.name);
+    </script>
+</html>

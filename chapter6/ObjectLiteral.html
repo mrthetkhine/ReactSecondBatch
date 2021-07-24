@@ -6,9 +6,17 @@
         let obj = {
             "name" :"Tk",//Property
             "age": 36,
-            "school": shcool
+            "school": shcool,
+            showMySelf:function()
+            {
+                console.log("My name is ",this.name , " Age is ",this.age);
+            }
         };
         console.log("Obj ",obj);
-       
+
+        obj.city = "Insein";
+        console.log("Obj ",obj);
+
+        obj.showMySelf();
     </script>
 </html>
