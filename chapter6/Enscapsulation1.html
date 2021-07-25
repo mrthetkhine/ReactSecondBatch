@@ -1,0 +1,27 @@
+<html>
+    <script>
+       //[] top= -1
+       //push1=> [1] , arr[++top] =element ,top=0
+       //push 2=>[1,2]  arr[++top] =ele, top=1
+       //pop =>2, [1] arr[top--] , top =0
+
+       let arrTop =-1;
+       let arr = [];
+
+       function push(arr,element)
+       {
+           console.log("Top is ",arrTop);
+           arr[++arrTop] = element;
+           console.log("After push ",arr, "length ",arr.length);
+       }
+       function pop(arr)
+       {
+            console.log("before pop ",arr);
+            return arr[arrTop--];
+       }
+       push(arr,1);
+       push(arr,2);
+       let ele = pop(arr,arrTop);
+       console.log("Ele ",ele);
+    </script>
+</html>

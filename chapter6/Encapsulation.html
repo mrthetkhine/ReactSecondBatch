@@ -1,0 +1,42 @@
+<html>
+    <script>
+       //[] top= -1
+       //push1=> [1] , arr[++top] =element ,top=0
+       //push 2=>[1,2]  arr[++top] =ele, top=1
+       //pop =>2, [1] arr[top--] , top =0
+
+       let parent = {
+           init:function(){
+                this.arr = [];
+                this.top = -1;
+           },
+           push:function(element){
+               ++this.top;
+               this.arr[this.top] = element;
+               console.log("After push ",this.arr);
+           },
+           pop:function()
+           {
+               return this.arr[this.top--];
+           }
+       };
+       let obj = Object.create(parent);
+       
+       obj.init();
+       //obj.top=0;
+       obj.push(10);
+       obj.push(20);
+       
+       console.log("obj ",obj)
+       
+       let ele = obj.pop();
+       console.log("Element ",ele);
+
+       let stack2 = Object.create(parent);
+       stack2.init();
+       stack2.push(100);
+       stack2.push(200);
+
+       console.log("Stack ",stack2);
+    </script>
+</html>

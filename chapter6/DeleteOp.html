@@ -1,0 +1,16 @@
+<html>
+    <script>
+       let obj = {
+           name : "Something"
+       };
+       Object.defineProperty(obj,"age",{
+           value : 36,
+           configurable:false
+       })
+       delete obj.name;
+       delete obj.age;
+
+       console.log("Obj ",obj);
+       console.log("age  obj.hasOwnProperty ", obj.hasOwnProperty("age"));
+    </script>
+</html>

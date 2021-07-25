@@ -1,0 +1,29 @@
+<html>
+    <script>
+        let parent = {
+            cars :["Byte Pu"],
+            goTrip:function()
+            {
+                console.log("I go trip with ",this.cars[0]);
+            },
+            carBroke:function(){
+                this.cars[0]= "ByitePu 1930 Broken";
+                //this.cars = [];
+            }
+
+        };//Object
+        let mgmg = Object.create(parent);
+        
+        mgmg.name = "Mg Mg";
+        console.log("Obj ",mgmg);
+        console.log("Obj.car ",mgmg.cars);
+        mgmg.goTrip();
+        mgmg.carBroke();
+
+        let aungAung = Object.create(parent);
+        aungAung.name = "Aung Aung";
+        console.log("Obj ",aungAung);
+        console.log("Obj.car ",aungAung.cars);
+        aungAung.goTrip();
+    </script>
+</html>

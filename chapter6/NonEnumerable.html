@@ -1,0 +1,15 @@
+<html>
+    <script>
+        let obj = {
+            one:"One"
+        };
+        Object.defineProperty(obj,"two",{
+            value :"Two",
+            enumerable :false
+        });
+        for(let pro in obj)
+        {
+            console.log("Pro ",pro);
+        }
+    </script>
+</html>

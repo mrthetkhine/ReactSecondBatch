@@ -1,0 +1,25 @@
+<html>
+    <script>
+        let parent = {
+            car :"ByitePu",
+            goTrip:function()
+            {
+                console.log("I go trip with ",this.car);
+            }
+        };//Object
+        let obj = Object.create(parent);
+        
+        obj.name = "Mg Mg";
+        console.log("Obj ",obj);
+        console.log("Obj.car ",obj.car);
+        obj.goTrip();
+
+        //all properties
+        for(let prop in obj)
+        {
+            console.log("Pro ",prop);
+        }
+        let arr = Object.getOwnPropertyNames(obj);
+        console.log("Own property ",arr);
+    </script>
+</html>

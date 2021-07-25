@@ -1,0 +1,11 @@
+<html>
+    <script>
+        let parent={
+            name:"I am parent"
+        };
+        let obj = Object.create(parent);
+        obj.name = "I am object";
+        console.log("Obj.name ",obj.name)
+        console.log("Prototype ",obj.__proto__.name);
+    </script>
+</html>
