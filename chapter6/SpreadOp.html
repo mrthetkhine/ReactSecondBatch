@@ -1,0 +1,21 @@
+<html>
+    <script>
+        // target<=source
+       let defaultConfig = {
+           color:"blue",
+           foregroundColor:"white"
+       };
+       let config ={
+            color:"red",
+       }
+       let result = {... defaultConfig,...config}
+       /*
+       {
+           color:defeaultConfig.color,
+           foregroundColor: defaultConfig.foregroundColor
+       }
+       */
+       console.log("defaultConfig ",defaultConfig);
+       console.log("Obj ",result); //color,foregroudn
+    </script>
+</html>

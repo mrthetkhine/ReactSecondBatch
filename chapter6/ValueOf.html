@@ -1,0 +1,21 @@
+<html>
+    <script>
+        // target<=source
+       let obj = {
+          x : 10,
+          y  : 20,
+          valueOf:function(){
+              return this.x
+          }
+       };
+       let obj2 = {
+          x : 10,
+          y  : 20,
+          valueOf:function(){
+              return this.x
+          }
+       };
+       console.log("Obj "+(obj+obj2));
+       //console.log("Obj.toJSON ",obj.toJSON());
+    </script>
+</html>

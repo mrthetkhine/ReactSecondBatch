@@ -1,0 +1,16 @@
+<html>
+    <script>
+       let obj ={
+           "one":"Property 1",
+           "two":"Property 2"
+       }
+       let keys = Object.keys(obj);
+       console.log("Key ",keys);
+
+       for(let prop in obj)
+       {
+           console.log("Prop ",prop , " Value ", obj[prop]);
+       }
+       console.log("OwnKeys ",Reflect.ownKeys(obj));
+    </script>
+</html>

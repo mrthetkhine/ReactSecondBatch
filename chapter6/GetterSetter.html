@@ -1,0 +1,24 @@
+<html>
+    <script>
+       let obj = {
+           _age : 12,
+           get age(){
+               console.log("Getter called");
+               return this._age;
+           },
+           set age(val){
+               console.log("Setter called ",val);
+               if(val>0 && val <100)
+               {
+                   this._age = val;
+               }
+           }
+       };
+       //obj.age = 1000;
+       console.log("Obj ",obj.age);
+       obj.age = 1000;
+       console.log("Obj ",obj.age);
+       obj.age = 50;
+       console.log("Obj ",obj.age);
+    </script>
+</html>

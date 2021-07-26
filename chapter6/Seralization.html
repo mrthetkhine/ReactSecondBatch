@@ -1,0 +1,30 @@
+<html>
+    <script>
+        // target<=source
+       let obj = {
+           userName :"something",
+           password:"new",
+           color:"blue",
+           foregroundColor:"white",
+           display:function()
+           {
+               console.log("Hello");
+           },
+           toJSON:function(){
+               let newObj = {...this};
+                delete newObj.userName;
+                delete newObj.password
+                return newObj;
+           }
+       };
+       //Serialization
+       let str = JSON.stringify(obj);
+       console.log("JSON ",str);
+
+       //Deserialization
+       let obj2 = JSON.parse(str);
+       console.log("Obj2 ",obj2);
+
+       console.log(JSON.stringify([1,2,2,3]));
+    </script>
+</html>

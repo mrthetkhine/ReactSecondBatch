@@ -1,0 +1,27 @@
+<html>
+    <script>
+        // target<=source
+       let target ={
+            x: 1,
+            display:function()
+            {
+                console.log("Hello");
+            }
+       }
+       let source = {
+           y:2,
+           z:3
+       }
+       for(let prop in target)
+       {
+           source[prop] = target[prop];
+       }
+       console.log("Target ",target);
+       console.log("Source ",source);
+       
+       let newObj = Object.assign(source,target,{i:10,j:20});
+       console.log("newObject ",newObj);
+       console.log("Source ",source);
+       console.log("Target ",target);
+    </script>
+</html>
