@@ -1,0 +1,26 @@
+<html>
+    <script>
+        //0 -> length -1
+        let arr = [1,2,3,4,1,2,3];
+        console.log("Arr ",arr);
+
+        //let result to be empty array
+        //loop though the original array
+        //if the element is not already in the result array,
+        // add them to result array
+
+        let result = [];
+        for(let item of arr)
+        {
+            //console.log("Item ",item);
+            if(result.indexOf(item) == -1)
+            {
+                result.push(item);
+            }
+        }
+        console.log("Result ",result);
+
+        let notDuplicate = [...new Set(arr)];
+        console.log("Not duplicate ",notDuplicate);
+    </script>
+</html>
