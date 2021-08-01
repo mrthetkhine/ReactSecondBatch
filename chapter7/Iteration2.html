@@ -1,0 +1,23 @@
+<html>
+    <script>
+        //0 -> length -1
+        let arr = [1,2,3,4,5,6];
+        
+        function doSomething(ele)
+        {
+            console.log("Process ",ele);
+        }
+        arr.forEach(doSomething);
+        
+        arr.forEach(ele=>console.log('Processing with lambda ',ele));
+
+        for(let i=arr.length;i>=0;i--)
+        {
+            if(arr[i]!== undefined)
+            {
+                console.log("Arr ",i, " ele ",arr[i]);
+            }
+           
+        }
+    </script>
+</html>

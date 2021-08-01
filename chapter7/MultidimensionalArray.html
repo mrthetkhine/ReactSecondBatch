@@ -1,0 +1,32 @@
+<html>
+    <script>
+        //0 -> length -1
+        let arr0 = [0,2,3,4,5,6];
+        let arr1 = [1,2,0,0,5,6];
+        let arr2 = [1,2,0,0,5,6];
+        let arr3 = [0,0,0,0,5,6];
+        
+        let multi = [
+            [0,2,3,4,5,6],
+            [1,2,0,0,5,6],
+            [1,2,0,0,5,6],
+            [0,0,0,0,5,6],
+        ];
+        console.log(multi[0][1]);
+        console.log(multi[0]);
+        let jaggedArray = [
+            [1,2,3],
+            [1,2],
+            [1,2,3,4,5]
+
+        ];
+        for(let i=0, len = jaggedArray.length;i< len;i++)
+        {
+            console.log("row========");
+            for(let j=0,j_len= jaggedArray[i].length;j< j_len;j++)
+            {
+                console.log("Col ", jaggedArray[i][j]);
+            }
+        }
+    </script>
+</html>

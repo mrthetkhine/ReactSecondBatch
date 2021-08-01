@@ -1,0 +1,33 @@
+<html>
+    <script>
+        //0 -> length -1
+        let arr = [0,2,3,4,5,6];
+        let arr2 = arr.map(ele=>ele+2);
+        console.log("Arr ",arr);
+        console.log("Arr 2 ",arr2);
+
+        let users = [
+            {
+                name : "One",
+                age : 12
+            },
+            {
+                name : "Two",
+                age : 12
+            },
+            {
+                name : "Three",
+                age : 12
+            },
+            {
+                name : "Four",
+                age : 12
+            },
+        ];
+        let names = users.map(user=>"User "+ user.name);
+        console.log("Names ",names);
+
+        let imageList = ["www.goole.com/jpege","yahoo.jpge"]
+        imageList.forEach(image=>console.log('Download ',image))
+    </script>
+</html>

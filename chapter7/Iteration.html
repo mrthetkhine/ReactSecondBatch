@@ -1,0 +1,29 @@
+<html>
+    <script>
+        //0 -> length -1
+        let arr = [1,2,3,4,5,undefined,,6];
+        
+        for(let a of arr)
+        {
+            console.log("A ",a);
+            a = a * 2;
+        }
+        console.log("Arr ",arr);
+        console.log("5 in arr ",5 in arr);//undefined
+        console.log("6 in arr ",6 in arr);//empty
+
+        for(let i=0, len= arr.length; i < len ; i++)
+        {
+            console.log("A ",arr[i]);
+            arr[i] = arr[i] * 2;
+        }
+        console.log("Arr ",arr);
+
+        for(let [index,ele] of arr.entries())
+        {
+            console.log("Arr index ",index , " ele ",ele);
+            ele = ele *  2;
+        } 
+        console.log("Arr ",arr);
+    </script>
+</html>
