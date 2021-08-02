@@ -1,0 +1,17 @@
+<html>
+    <script>
+        let arr =[10,20,30,50,20];
+
+        function adder(x,y)
+        {
+            console.log("x ", x  , "y ",y);
+            return x+y;
+        }
+
+        //let sum = arr.reduce((x,y)=>x+y,0);
+        let sum = arr.reduceRight(adder,0);
+        console.log("Arr ",arr);
+        console.log("Sum ", sum);
+    </script>
+    
+</html>

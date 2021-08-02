@@ -1,0 +1,16 @@
+<html>
+    <script>
+    let arr = [1,2,3,4,[1,5]]; //
+    console.log("Arr ",arr);
+    console.log("arr. flat ", arr.flat());
+    console.log("arr[1,2,3,[[3,4,5]]] flat ", [1,2,3,[[3,4,5]]].flat());
+    console.log("arr[1,2,3,[[3,4,5]]] flat(2) ", [1,2,3,[[3,4,5]]].flat(2));
+    
+    let result = [1,2,3,[[3,4,5]]].flatMap(e=>{
+        console.log("Ele ",e);
+        return e;
+    })
+    console.log("flat map result ",result);
+
+    </script>
+</html>

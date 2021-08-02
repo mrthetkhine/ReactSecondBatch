@@ -1,0 +1,61 @@
+<html>
+    <script>
+       
+
+        let users = [
+            {
+                name : "Mg Mg",
+                age : 20,
+                gender:"male",
+            },
+            {
+                name : "Hla Mg",
+                age : 20,
+                gender:"female",
+            },
+            {
+                name : "Aung Aung",
+                age : 19,
+                gender:"male",
+            },
+            {
+                name : "Myo Htun",
+                age : 35,
+                gender:"male",
+            },
+            {
+                name : "Khaing Khant",
+                age : 10,
+                gender:"male",
+            },
+        ];
+        console.log("User ",users);
+        //Predicate function
+        function isAdult(user)
+        {
+            return user.age>18;
+        }
+        let adultPeople = users.filter(isAdult)
+                                .reduce((group,user)=>{
+                                        
+                                    if(!group[user.gender])
+                                    {
+                                        group[user.gender] = [];
+                                    }
+                                    group[user.gender].push(user); 
+                                    
+                                    return group;
+                                                
+                                },{});
+                                /*
+                                {
+                                    "male":[],
+                                    "female":[]
+                                }
+                                */
+                        
+        console.log("AdultPeople Men ",adultPeople);
+
+        
+    </script>
+</html>
