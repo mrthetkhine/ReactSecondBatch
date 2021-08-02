@@ -1,0 +1,23 @@
+<html>
+    <script>
+        let arr =[10,20,30,50,0];
+        console.log("Ar indexOf(10) ",arr.indexOf(10));
+        console.log("Ar indexOf(40) ",arr.indexOf(40));
+
+        //Predicate Function 
+        function greaterThanTen(ele)
+        {
+            return ele >10;
+        }
+        console.log("Arr ",arr);
+        console.log("Arr.find >10 ",arr.find(greaterThanTen));
+        console.log("Arr.find >100",arr.find(ele=> ele >100));
+        console.log("Arr.find ==0",arr.find(ele=> ele ==0));
+
+        console.log("Arr.findIndex >10 ",arr.findIndex(greaterThanTen));
+        console.log("Arr.findIndex >100",arr.findIndex(ele=> ele >100));
+        console.log("Arr.findIndex ==0",arr.findIndex(ele=> ele ==0));
+        
+    </script>
+    
+</html>

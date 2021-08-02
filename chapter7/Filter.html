@@ -1,0 +1,58 @@
+<html>
+    <script>
+       
+
+        let users = [
+            {
+                name : "Mg Mg",
+                age : 20,
+                gender:"male",
+            },
+            {
+                name : "Hla Mg",
+                age : 20,
+                gender:"female",
+            },
+            {
+                name : "Aung Aung",
+                age : 19,
+                gender:"male",
+            },
+            {
+                name : "Myo Htun",
+                age : 35,
+                gender:"male",
+            },
+            {
+                name : "Khaing Khant",
+                age : 10,
+                gender:"male",
+            },
+        ];
+        console.log("User ",users);
+        //Predicate function
+        function isAdult(user)
+        {
+            return user.age>18;
+        }
+        let grownMen = users.filter(isAdult)//[user]
+                            .map(user=>user.gender=="male"?"U "+user.name: "Daw "+user.name);//[string]
+        console.log("Grown Men ",grownMen);
+
+        let booleanArray = [true, true, false, false, true];
+        let count = booleanArray.filter(ele=>ele).length;
+        console.log("Arr ",booleanArray, " true count ",count);
+
+        //Imperative example
+        let resultArray = [];
+        for(let i=0, len = users.length;i< len;i++)
+        {
+            let user = users[i];
+            if( user.age > 18)
+            {
+                resultArray.push(user);
+            }
+        }
+        console.log("Result by imperative ", resultArray);
+    </script>
+</html>
