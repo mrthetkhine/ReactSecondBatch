@@ -1,0 +1,43 @@
+<html>
+    <script>
+        let objArr = [
+            {
+                name : "Tk",
+                age : 36,
+            },
+            {
+                name : "Aung Min",
+                age :12,
+            },
+            {
+                name : "Aung Min",
+                age :30,
+            },
+            {
+                name : "Hla Min",
+                age :30,
+            },
+            {
+                name : "Min Min",
+                age :18,
+            },
+        ];
+        console.log("Obj arr ",JSON.stringify(objArr));
+        //alert("Hello");
+        objArr.sort( (a,b)=>a.age-b.age);
+        console.log("Sorted ",JSON.stringify(objArr));
+
+        objArr.sort((a,b)=> a.name.localeCompare(b.name));
+        console.log("Sorted ",JSON.stringify(objArr));
+
+        objArr.sort((a,b)=>{
+            let compareResult = a.name.localeCompare(b.name);
+            if ( compareResult == 0)
+            {
+                return b.age - a.age;
+            }
+            return compareResult;
+        })
+        console.log("Obj Arr ",objArr);
+    </script>
+</html>

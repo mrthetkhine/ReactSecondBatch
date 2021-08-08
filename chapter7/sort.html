@@ -1,0 +1,31 @@
+<html>
+    <script>
+        //Number =>to String
+        //String=>Number
+        let arr = [10,201,20,111];
+
+        console.log("Before sort ",arr);
+        arr.sort();
+        console.log("Arr sort ",arr)
+
+        arr = ["banana","apple",true,"orange"];
+        console.log("Before sort ",arr);
+        arr.sort();
+        console.log("Arr sort ",arr);
+
+        arr = [10,201,20,111];
+        arr.sort(function(a,b){
+            return a-b;
+        });
+        console.log("Arr ascend",arr);
+
+        arr = [10,201,20,111];
+        arr.sort(function(a,b){
+            console.log("Compare a ",a , " b",b);
+            return b-a;
+        });
+        console.log("Arr descend ",arr);
+        arr.sort((a,b)=> a-b);
+        console.log("Arr Asc ",arr);
+    </script>
+</html>

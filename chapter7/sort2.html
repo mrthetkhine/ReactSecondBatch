@@ -1,0 +1,19 @@
+<html>
+    <script>
+        //Number =>to String
+        //String=>Number
+        let a = ["ant", "Bug", "cat", "Dog"];
+        console.log("Before sort ",a);
+        a.sort();
+        console.log("Ar ",a);
+
+        a.sort((a,b)=> {
+            a = a.toLowerCase(); 
+            b = b.toLowerCase(); 
+            if (a < b) return -1;
+            if (a > b) return 1; 
+            return 0;
+        });
+        console.log("Arr ",a);
+    </script>
+</html>
