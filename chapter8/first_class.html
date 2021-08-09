@@ -1,0 +1,33 @@
+<html>
+    <script>
+
+        //function definition,declaration
+        function greeting(msg) //header //mg=>argument
+        {
+            console.log(msg);
+            console.log("How are you");
+        } //body
+        let greetFunc = greeting; //Rule1
+        greetFunc("Hello")
+
+        //Rule 2 
+        function acceptAnotherFuc(greet)
+        {
+            console.log("Inside another function");
+            greet("Called from accept Another");
+        }
+        acceptAnotherFuc(greeting);
+
+        //Rule 3
+        function getAnotherFunction()
+        {
+            function hello()
+            {
+                console.log("Hello called");
+            }
+            return hello;
+        }
+        //               hello
+        getAnotherFunction()();
+    </script>
+</html>

@@ -1,0 +1,19 @@
+<html>
+    <script>
+
+        function add(x,y)
+        {
+            console.log("x ",x, " y ",y);
+            return x+y;
+        }
+        let c = add(2,3);
+        console.log("C ",c);
+
+        let sum = (a,b)=>a+b;
+        console.log("sum (1,2) ", sum(1,2));
+
+        let arr = [10,20,4,3,11,14,25];
+        let evenList = arr.filter(x=>x%2==0);
+        console.log("Even list ",evenList);
+    </script>
+</html>
