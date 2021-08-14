@@ -1,0 +1,25 @@
+<html>
+    <script>
+
+     function square(num)
+     {
+        if(num < 0)
+        {
+            return [undefined,Error("Some error")];
+        }
+        else
+        {
+            return [num*num,undefined];
+        }
+     }
+     let [value,err] = square(-10);
+     if(err)
+     {
+         console.log("Have error ");
+     }
+     else
+     {
+        console.log("Value ",value);
+     }
+    </script>
+</html>

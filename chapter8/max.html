@@ -1,0 +1,18 @@
+<html>
+    <script>
+
+     function max()
+     {
+         console.log("Arguments ",arguments);
+         for(let i=0 ,len = arguments.length;i< len;i++)
+         {
+             console.log("Arg ",arguments[i]);
+         }
+         console.log("IsArray ",Array.isArray(arguments));
+         return Math.max.apply(null,arguments);
+     }
+     let m = max(1,2,3,4,100,12);
+     console.log("Max  ",m);
+
+    </script>
+</html>

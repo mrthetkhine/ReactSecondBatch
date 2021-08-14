@@ -1,0 +1,24 @@
+<html>
+    <script>
+
+     let obj = {
+         name : "Tk",
+         age : 36,
+         display :function(message)
+         {
+             console.log("Name ",this.name, " Age ",this.age);
+             console.log("Message ",message);
+         }
+     };
+     obj.display("how are you"); 
+
+     let obj2 = {
+         name:"Something",
+         age : 27 
+     }
+     let dis = obj.display.bind(obj2);
+     dis("Hello");
+     
+
+    </script>
+</html>

@@ -1,0 +1,19 @@
+<html>
+    <script>
+
+     let obj = {
+         color :"blue",
+         background: "green",
+         lineStyle: "dashed",
+         line : "Aonther line"
+     };
+     let {color,background} = obj;//color = obj.color, background  =obj.background
+     console.log("Color ", color);
+     console.log("back ",background);
+
+     let { color:col,
+            background:bg,
+        line="myline"} = obj;
+     console.log("Col ",col, " bg ",bg, "line ",line);
+    </script>
+</html>

@@ -1,0 +1,20 @@
+<html>
+    <script>
+
+     Math.max = function()
+     {
+         console.log("WTF bro, WTF");
+
+     }
+     console.log("Math.max ", Math.max(1,2,3));
+
+     //Monkey packing
+     Array.prototype.myFilter = function()
+     {
+         console.log("My Filter");
+     }
+     let arr = new Array(1,2,323);
+     arr.myFilter();
+
+    </script>
+</html>

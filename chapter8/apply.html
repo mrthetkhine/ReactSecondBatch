@@ -1,0 +1,19 @@
+<html>
+    <script>
+
+     let arr = [101,121,3,4,11,1];
+     let max = Math.max(101,121,3,4,11,1);
+     console.log("max ",max);
+     
+     max = Math.max(arr);
+     console.log("Max ",max);
+
+     max = Math.max(...arr);
+     console.log("Max ",max);
+
+     //Old
+     max = Math.max.apply(null,arr);
+     console.log("Max ",max);
+     
+    </script>
+</html>

@@ -1,0 +1,15 @@
+<html>
+    <script>
+
+     function max(...rest)
+     {
+        console.log("is array ",Array.isArray(rest));
+        return Math.max.apply(null,rest);
+     }
+     let a = max(1,20,2);
+     console.log("A ",a);
+
+     let b = max(100,1,901);
+     console.log("b ",b);
+    </script>
+</html>
