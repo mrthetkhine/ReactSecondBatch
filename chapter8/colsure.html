@@ -1,0 +1,19 @@
+<html>
+   
+    <script>
+        function outter()
+        {
+            let counter = 0;
+            function inner()
+            {
+                counter ++;
+                console.log("Counter ",counter);
+                return counter;
+            }
+            return inner;
+        }
+       let inner = outter();
+       console.log(inner());
+       console.log(inner());
+    </script>
+</html>

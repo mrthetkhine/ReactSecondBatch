@@ -1,0 +1,28 @@
+<html>
+    <script src="Module.js">
+
+    
+    </script>
+    <script>
+        function MyModule()
+        {
+            function privateFunc()
+            {
+                console.log("Private Function");
+            }
+            let counter = 0;
+            function api1()
+            {
+                counter ++;
+                console.log("API 1 ",counter);
+                privateFunc();
+            }
+            return {
+                api: api1
+            }
+        }
+        let mod = MyModule();
+        mod.api();
+        mod.api();
+    </script>
+</html>

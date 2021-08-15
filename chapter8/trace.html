@@ -1,0 +1,22 @@
+<html>
+   
+    <script>
+
+        //func(a,b,c) [a,b,c]
+        function trace(anotherFunc)
+        {
+            return function()
+            {
+                console.log("Function ",anotherFunc.name , " Called with ",arguments);
+                //return anotherFunc.apply(null,arguments);
+                return anotherFunc(...arguments);
+            }
+        }
+        function display()
+        {
+            console.log("Display func ");
+        }
+        let dis = trace(display);
+        dis("hello");
+    </script>
+</html>

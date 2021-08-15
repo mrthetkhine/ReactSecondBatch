@@ -1,0 +1,32 @@
+<html>
+   
+    <script>
+
+        function change(data)
+        {
+            data++;
+        }
+        let data = 10;
+        change(data);
+        console.log("After change ",data);
+
+        function objChange(obj)
+        {
+            obj.data ++;
+        }
+        let obj1 = {
+            data : 10
+        };
+        objChange(obj1);
+        console.log("After objChange ",obj1.data);
+
+        function anotherObjChange(obj)
+        {
+            obj = {
+                data : 200
+            };
+        }
+        anotherObjChange(obj1);
+        console.log("After objChange ",obj1.data);
+    </script>
+</html>

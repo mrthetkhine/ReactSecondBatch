@@ -1,0 +1,27 @@
+<html>
+   
+    <script>
+
+       let a = 10;
+       let b = 20;
+
+       a = b; //a = 20, b = 20
+       b++;
+       console.log("A ",a);
+       console.log("B ",b);
+
+       let c = {
+           data : 10
+       };
+       let d = c;
+       c.data ++;
+
+       console.log("D. data ",d.data);
+
+       d = {
+           data : 200
+       }
+       c.data ++;
+       console.log("D. data ",d.data);
+    </script>
+</html>

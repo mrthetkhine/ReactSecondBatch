@@ -1,0 +1,24 @@
+<html>
+    <script>
+
+     function square(num)
+     {
+         console.log("Compute square on ",num);
+         return num*num;
+     }
+     getSqaure.cache ={};
+     function getSqaure(num)
+     {
+        if(! getSqaure.cache[num])
+        {
+            let result = square(num);
+            getSqaure.cache[num] = result;
+        }
+        return getSqaure.cache[num];
+     }
+
+     console.log("Get Square 3",getSqaure(3));
+     console.log("Get Square 13",getSqaure(13));
+     console.log("Get Square 3",getSqaure(3));
+    </script>
+</html>
