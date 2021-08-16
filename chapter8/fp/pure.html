@@ -1,0 +1,38 @@
+<html>
+    <script>
+        //lowercase | uppercase string => upper case string
+        function toUpper(str)
+        {
+            return str.toUpperCase();
+        }
+        console.log(toUpper("hello"));
+        console.log(toUpper("how are you"));
+
+        //inpure
+        function getRandom()
+        {
+            return Math.random();
+        }
+        console.log("Get Random ",getRandom());
+        console.log("Get Random ",getRandom());
+        let x= 10;
+
+        function another()
+        {
+            x = x* 10;
+        }
+        //impure
+        function getX()
+        {
+            return x++;//side effect
+        }
+        console.log("getX ",getX());
+        console.log("getX ",getX());
+
+        function getMe()
+        {
+            return 10;
+        }
+        console.log("getMe() ",getMe());
+    </script>
+</html>

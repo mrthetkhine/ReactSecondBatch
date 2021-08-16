@@ -1,0 +1,25 @@
+<html>
+    <script>
+        function compose(a,b)
+        {
+            return function(x)
+            {
+                return b(a(x));
+            }
+        }
+        //lowercase | uppercase string => upper case string
+        function toUpper(str)
+        {
+            return str.toUpperCase();
+        }
+        function prependHi(str)
+        {
+            return "Hi "+ str;
+        }
+        let str= toUpper(prependHi("how are you"));
+        console.log("Str ",str);
+
+        let toUpperAndPrepend = compose(prependHi,toUpper);//f1+f2 =>f3
+        console.log(toUpperAndPrepend("how are you"));
+    </script>
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <script>
+        let arr = [1,2,3];
+        let arr2 = arr.map(x=>x*2);
+        console.log("Arr 2",arr2);
+
+        function normal()
+        {
+            console.log("Normal called");
+        }
+        function firstOrder(func)
+        {
+            console.log("First order");
+            func();
+            
+        }
+        function secondOrder(first)
+        {
+            console.log("Second order");
+            first();
+            
+        }
+        firstOrder(normal);
+    </script>
+</html>

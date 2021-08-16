@@ -1,0 +1,15 @@
+<html>
+    <script>
+        function outer()
+        {
+            let count = 0;
+            return function inner()
+            {
+                return count ++;
+            }
+        }
+        let inc = outer();
+        console.log(inc());
+        console.log(inc());
+    </script>
+</html>

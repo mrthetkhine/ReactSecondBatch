@@ -1,0 +1,18 @@
+<html>
+    <script>
+        function normal()
+        {
+            console.log("Normal");
+        }
+        function hof1(func)//input func
+        {
+            func();
+        }
+        function hof2()
+        {
+            return normal;
+        }
+        hof1(normal);
+        hof2()();
+    </script>
+</html>
