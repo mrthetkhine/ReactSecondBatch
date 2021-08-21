@@ -1,0 +1,28 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+        
+        const add1 = x => x + 1;
+        const multiplyBy2 = x => x * 2;
+        const log = R.tap(x=>console.log("x is ",x))
+        const add1AndMultiplyBy2 = R.pipe(
+            add1,
+            //R.tap(x => console.log('After add ', x)),
+            log,
+            multiplyBy2,
+            //R.tap(x => console.log('after multiply ', x)),
+            log
+            );
+        console.log(add1AndMultiplyBy2(4));
+        
+       
+        /*
+        const addOneAndMultipleBy2 = R.pipe(add1,multiplyBy2);
+        console.log(addOneAndMultipleBy2(3));
+        */
+        //add1(4) => 5
+            //tap(5)=>console.log(5)=>5
+                //multiplyBy2(5)=>10
+                    //tap(10)=>console.log(10)=>10
+    </script>
+</html>

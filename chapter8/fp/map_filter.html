@@ -1,0 +1,18 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+    
+    let list = [1,2,3,4];
+    let double = x=> x*x;
+    let doubleList = R.map(double,list);
+    console.log("Double list ",doubleList);
+
+    let isEven = (x)=>x%2 == 0;
+
+    let evenList = R.filter(isEven,list);
+    console.log("Even list ",evenList);
+
+    let total = R.reduce(R.add,0,list);
+    console.log("total ",total);
+    </script>
+</html>

@@ -1,0 +1,24 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+        
+        console.log([1,2,3].map(x=>2*x));
+
+        
+        let arr = ['1','2','3'].map(parseInt);
+        console.log("Arr ",arr);
+
+        let ourParse = (x)=> parseInt(x)
+        arr = ['1','2','3'].map(ourParse);
+        console.log("Arr ",arr);
+
+        const unary = (fn)=> (
+            fn.length === 1?
+                fn
+                :(arg)=>fn(arg)
+        );
+        arr = ['1','2','3'].map(unary(parseInt));
+        console.log("Arr ",arr);
+
+    </script>
+</html>

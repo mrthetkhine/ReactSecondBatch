@@ -1,0 +1,27 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+    
+    const cache = (fn)=>{
+        let cachedData = {};
+        return function(x)
+        {
+            return cachedData[x]?
+                        cachedData[x]
+                        :(cachedData[x] = fn(x));
+
+        }
+    }
+    const addOne = (x)=> {
+        console.log("Called ad +1 for ",x);
+        return x+1;
+    };
+    //let y = addOne(3);
+    //console.log(y);
+
+    let cachedVersion = cache(addOne);
+    console.log("Add 3 =>", cachedVersion(3));
+    console.log("Add 5 =>", cachedVersion(5))
+    console.log("Add 3 => ", cachedVersion(3));
+    </script>
+</html>

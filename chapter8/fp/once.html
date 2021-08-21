@@ -1,0 +1,25 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+        
+    const once =(fn)=>{
+        let done = false;
+        return function()
+        {
+            return done?undefined:(done=true,fn(...arguments));
+        }
+    }
+    function callMeOnlyOnce()
+    {
+        console.log("Fone shu lite");
+    }
+    let justOnce = once(callMeOnlyOnce);
+    justOnce();
+    justOnce();
+    justOnce();
+
+    let useRamda = R.once(callMeOnlyOnce);
+    useRamda();
+    useRamda();
+    </script>
+</html>

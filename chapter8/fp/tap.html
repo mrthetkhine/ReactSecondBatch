@@ -1,0 +1,37 @@
+<html>
+    <script>
+        //lowercase | uppercase string => upper case string
+        function toUpper(str)
+        {
+            return str.toUpperCase();
+        }
+        function appendHello(str)
+        {
+            return str + " Hello"
+        }
+        console.log(toUpper(appendHello("hi")));
+
+        /*
+        function tap(value)
+        {
+            return fuction(fn)
+            {
+
+            }
+        }*/
+        /*
+        const tap = (value)=>(fn)=>(
+            typeof(fn) === 'function' && fn(value),console.log(value)
+            )
+        tap("fun")((it)=>console.log("value is ",it));    
+        */
+        
+        let tap = (value)=>(fn)=>{
+            fn(value);
+            return value;
+        }
+        tap("hi")(it=>console.log(it))
+
+        tap(appendHello("hi"))(it=>console.log(it));
+    </script>
+</html>

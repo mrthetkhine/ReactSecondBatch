@@ -1,0 +1,20 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+        
+    let auth = ()=>false;   
+    const authGuard =(fn)=>{
+    
+        return function()
+        {
+            return !auth()?undefined:fn(...arguments);
+        }
+    }
+    function admin()
+    {
+        console.log("Admin ");
+    }
+    let adminFun = authGuard(admin);
+    adminFun();
+    </script>
+</html>
