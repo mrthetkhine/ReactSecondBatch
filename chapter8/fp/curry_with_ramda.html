@@ -1,0 +1,15 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+        
+    let add= (x,y) => x+y;
+    console.log("Add ",add(1,2));
+
+    let addCur = R.curry(add);
+    console.log("Add Curry ",addCur);
+
+    let add4 = addCur(4);    
+    console.log("Add 4+1 ",add4(1));
+    console.log("Add 4+2 ",add4(2));    
+    </script>
+</html>

@@ -1,0 +1,52 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+        
+    let toUpper =(x)=>x.toUpperCase();
+    let appendHi = (x)=> x+" hi";
+
+
+    function tap2(fn,value)
+    {
+        console.log("Fn is ",fn);
+        console.log("values is ",value);
+        fn(value);
+        return value;
+    }
+    tap2((x)=>console.log(x),"testing tap2 ")
+    
+    function tap(fn)
+    {
+        return function(value)
+        {
+            fn(value);
+            return value;
+        }
+    }
+
+    tap((x)=>console.log(x))("hi")
+    
+    //console.log();
+    console.log(toUpper("hello"));
+    console.log(appendHi("hello"));
+
+    //appendHi=> Hello Hi=> toUpper => HELLO HI
+    console.log(toUpper(appendHi("Hello") ));
+
+    //console.log(toUpper(tap2(appendHi("Hello") )));
+    let log = tap((x)=>console.log("our tap work ",x));
+    let consoleLog = (x)=>console.log("our tap work ",x);
+    //let log2 = R.partial(tap2,consoleLog);
+
+    //appendHi= "Hello hi"=>log=>  "Hello hi"=>toUpper=>"HELLO HI"=>log=>"HELLO HI"
+    //console.log(log(toUpper(log(appendHi("Hello") ))));
+    let upperAndAppendHi = R.compose(
+                                    log,
+                                    toUpper,
+                                    log,
+                                    appendHi);
+    console.log(upperAndAppendHi("with Randa"));
+  
+    
+    </script>
+</html>

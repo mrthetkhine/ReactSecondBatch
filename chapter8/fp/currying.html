@@ -1,0 +1,21 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+        
+    const add = (x,y)=>x+y;
+    console.log(add(10,20));
+    console.log(add(10));
+
+    function curAdd(x)
+    {
+        return function(y)
+        {
+            return x+y;
+        }
+    }
+    console.log(curAdd(2)(3));
+
+    const curAdd2 = x=>y=>x+y;//x=> ( y=> x+y )
+    console.log("add ",curAdd2(5)(10));
+    </script>
+</html>

@@ -1,0 +1,55 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+        
+    function createDom(parentTag,child)
+    {
+        return "<"+parentTag+">"
+                + child 
+                +"</"+ parentTag+">"
+    }
+    let code = createDom("ul","<li>One</li>");
+    console.log("Code ",code);
+
+    function createDom2(parentTag)
+    {
+        return function(child)
+        {
+            return "<"+parentTag+">"
+                + child 
+                +"</"+ parentTag+">";
+        }
+    }
+    let ulCode = createDom2("ul");
+    console.log(ulCode("<li>One</li>"));
+    console.log(ulCode("<span>Hello<span>"));
+
+    
+    function action(type,text)
+    {
+        return {
+            type,
+            text
+        };
+    }
+    console.log(action("ADD_TODO","Item 1"));
+    console.log(action("ADD_TODO","Item 2"));
+
+    function action2(type)
+    {
+        return function(text)
+        {
+            return {
+                type,
+                text
+            }
+        }
+    };
+    let addAction = action2("ADD");
+    let removeAction = action2("Remove")
+
+    console.log("Add ",addAction("Item 1"));
+    console.log("Add2 ",addAction("Item 2"));
+    console.log("Remove ",removeAction("Item 1"));
+    </script>
+</html>

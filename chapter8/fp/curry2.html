@@ -1,0 +1,32 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+        
+    const add = x=>y=>x+y;//x=> ( y=> x+y )
+    let add3 = add(3);
+    console.log("Add 3 ",add3);
+    console.log("Add 3 +5 ",add3(5));
+    console.log("Add 3 +2 ",add3(2));
+
+    function api(apiBased,path)
+    {
+        let url = apiBased+ path;
+        console.log("Url ", url);
+    }
+    api('http://localhost/api/','movies');
+    api('http://localhost/api/','movies/1');
+    api('http://localhost/api/','movies/2');
+
+    function api2(apiBased)
+    {
+        return function(path)
+        {
+            let url = apiBased+ path;
+            console.log("Url ", url);
+        }
+    }
+    let movieApi = api2("http://localhost/api/");
+    movieApi("movies");
+    movieApi("movies/1");
+    </script>
+</html>

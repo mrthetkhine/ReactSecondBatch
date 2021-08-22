@@ -1,0 +1,22 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+        
+    let compose= (funA,funB)=> x=> funA(funB(x));  
+
+    let upper =(x)=>x.toUpperCase();
+    let appendHi = (x) => x +" hi";
+
+    let appendHiAndUpper = compose(upper,appendHi);
+    console.log("Append hi and upper ",appendHiAndUpper);
+    console.log( appendHiAndUpper("how are you "));
+
+    let newFunc = R.compose(upper,appendHi);
+    console.log( newFunc("how are you "));
+    //appendHi("how are you")=> "how are you hi"
+                    //=> upper("how are you hi") => HOW ARE YOU HI
+
+    let pipeFunc = R.pipe(appendHi, upper);
+    console.log("use pipe ", pipeFunc("how are you "));  
+    </script>
+</html>
