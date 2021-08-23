@@ -1,0 +1,74 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+        const Nothing = function(value)
+        {
+            this.value = value;
+        }
+        Nothing.of = function(value)
+        {
+            return new Nothing(value);
+        }
+        Nothing.prototype.map = function(fn)
+        {
+            return this;
+        }
+        const Some = function(value)
+        {
+            this.value = value;
+        }
+        Some.of = function(value)
+        {
+            return new Some(value);
+        }
+        Some.prototype.map = function(fn)
+        {
+            return Some.of(fn(this.value));
+        }
+        const Either = {
+            Some: Some,
+            Nothing : Nothing
+        };
+        function request(type)
+        {
+            if(type=='new')
+            {
+                return {
+                    "news":["One","Two ","Three"]
+                }
+            }
+            else{
+                throw Error("cannot get data")
+            }
+        }
+        let getReddit = (type)=>{
+            let response;
+            try
+            {
+                let json = request(type);
+                console.log("JSON ",json);
+                response = Some.of(json);
+            }
+            catch(err)
+            {
+                console.log(err);
+                response = Nothing.of({ message: "Something went wrong" , errorCode:
+                        err['statusCode'] });
+            }
+            return response;
+        }
+        let toUpper = x=> x.toUpperCase();
+        //console.log(getReddit('new'));
+        //console.log(request('new'));
+        //console.log(request('new1'));
+        
+        let response = getReddit('news');
+        //let response = getReddit('news');
+        let output = response.map(x=> {
+            return { 
+                news: x.news.map(toUpper)
+            };
+        });
+        console.log("Output ",output);
+    </script>
+</html>

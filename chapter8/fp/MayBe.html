@@ -1,0 +1,45 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+    let str ;
+    if(str)
+    {
+        str = str.toUpperCase();
+        console.log("str ",str);
+    }
+    /*
+    {
+        value: value
+    }
+    */
+    function MayBe(value) 
+    {
+        this.value = value;
+    }
+    MayBe.of = function(value)
+    {
+        return new MayBe(value);
+    }
+    MayBe.prototype.isNothing = function()
+    {
+        return (this.value === null || this.value === undefined || isNaN(this.value));
+    }
+    MayBe.prototype.map = function(fn)
+    {
+        return this.isNothing()?MayBe.of(null):MayBe.of(fn(this.value));
+
+    }
+    let toUpper = x=> x.toUpperCase();
+    let appendHi = x => x + " hi";
+
+    let s = "hello ";
+    //let s ;
+    let str2 = MayBe.of(s);
+    let output = str2.map(appendHi)
+                     .map(toUpper)
+                     .map(x=>x * 2)
+                     .map(toUpper);
+
+    console.log("Output ",output);
+    </script>
+</html>

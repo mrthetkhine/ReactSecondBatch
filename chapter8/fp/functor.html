@@ -1,0 +1,42 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+    let count = 1; //value
+
+    count = count +1;
+
+    /*
+    Functor rule
+    lift value into container
+    provide map
+    */
+    const Container = function(value)
+    {
+        this.value = value;
+    } 
+    Container.of = function(value)
+    {
+        return new Container(value);
+    }
+    Container.prototype.map = function(fn)
+    {
+        return Container.of(fn(this.value));
+    }
+    let identity = x =>x;
+    let c = Container.of(10); //lift value into container(Wrapper)
+    console.log("C ",c);
+
+    let double = x => x*2;
+    let add5 = x=> x+5;
+    let d = c.map(double)
+             .map(add5);
+    
+    console.log("C ", c);
+    console.log("d ", d);
+
+    console.log("Law 1 ",Container.of(3).map(identity));
+
+    let doubleAndAdd5 = R.compose(add5,double);
+    console.log("Law 2 ",Container.of(10).map(doubleAndAdd5));
+    </script>
+</html>
