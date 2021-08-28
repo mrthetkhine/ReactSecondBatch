@@ -1,0 +1,21 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       const Identity = x => ({
+            emit: () => x,
+            chain: f => f(x),
+            map: f => Identity(f(x))
+        });
+        //lift
+        Identity.of = Identity;
+        // example use:
+        const one = Identity.of(1);
+        console.log("One is ",one);
+
+        const two = one.map(x=>x+1);
+        console.log("Two ",two);
+        const three = two.chain(x=>x+1)
+
+        console.log("Three ",three);
+    </script>
+</html>

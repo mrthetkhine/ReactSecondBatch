@@ -1,0 +1,33 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+      let obj = {
+          name : "Tk",
+          /*
+          address : {
+              city:"Yangon",
+              township: "Nok"
+          }*/
+      };
+      let company = {
+        name : "Tk",
+          address : {
+              city:"Yangon",
+              township: "Nok"
+          }
+      }
+      const township = R.lensPath(['address','township']);
+      //console.log("Obj township ", township(obj));
+      console.log("Obj township ",R.view(township,obj));
+      console.log("Company township ",R.view(township,company));
+
+      //obj.address.township = "Hello";
+      let obj2 = R.set(township,"Yankin",obj);
+      console.log("Obj2 ",obj2);
+
+      let obj3 = R.over(township,R.toUpper,obj2);
+      console.log("Obj3 ",obj3);
+      console.log("Obj 2",obj2);
+
+    </script>
+</html>

@@ -1,0 +1,38 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+      let obj = {
+          name : "Tk",
+          /*
+          address : {
+              city:"Yangon",
+              township: "Nok"
+          }*/
+      };
+      let company = {
+        name : "Tk",
+          address : {
+              city:"Yangon",
+              township: "Nok"
+          }
+      }
+      /*
+      const city = obj.adress?.city;
+      console.log("City is ",city);
+      */
+      /*
+     const address = obj.address;
+     if(address)
+     {
+         const city = address.city;
+         console.log("City ",city)
+     }*/
+     const city = R.propOr('No Address','address');
+     console.log("City ", city(obj));
+     console.log("City ", city(company));
+
+     const nameAndAdress = R.props(['name','address']);
+     console.log("Name and Address ",nameAndAdress(company))
+
+    </script>
+</html>

@@ -1,0 +1,18 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       let url = "https://run.mocky.io/v3/2eb1a663-f0c9-45f9-9b2e-42555ff7f7e4";
+       function callBackend()
+       {
+           fetch(url)
+           .then(response=>{
+               console.log("Response ",response);
+               return response.json();
+           })
+           .then(json=>{
+               console.log("JSON ",json);
+           })
+       }
+       callBackend();
+    </script>
+</html>

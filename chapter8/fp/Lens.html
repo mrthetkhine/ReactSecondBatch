@@ -1,0 +1,24 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+      let obj = {
+          name : "Tk",
+          address : {
+              city:"Yangon",
+              township: "Nok"
+          }
+      };
+      console.log("Township ",obj.address.township);
+      obj.address.township = "SOK";
+      console.log("Obj ",obj);
+
+      let obj2 ={
+          name:obj.name,
+          address:{
+              city:obj.address.city,
+              township : "New Township"
+          }
+      }
+      console.log("Obj2 ",obj2);
+    </script>
+</html>

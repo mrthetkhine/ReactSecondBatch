@@ -1,0 +1,10 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       const x = 20;
+       const p = Promise.resolve(x);
+       const f = n=> Promise.resolve(n*2);
+       const result = p.then(f);
+       result.then(r=>console.log("result ",r));
+    </script>
+</html>
