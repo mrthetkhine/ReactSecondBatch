@@ -1,0 +1,46 @@
+<html>
+    
+    <script>
+      "use strict";  
+     
+      const Human = class
+      {
+          constructor(name,age)
+          {
+              console.log("Human Constructor called");
+              this.name = name;
+              this.age = age;
+          }
+          display()
+          {
+              console.log("Name ",this.name, " Age ",this.age);
+          }
+          work()
+          {
+              console.log(this.name , " Work ");
+          }
+      }
+      class Doctor extends Human
+      {
+          constructor(name,age,speciality)
+          {
+            console.log("Doctor constructor called");
+            super(name,age);
+            this.speciality = speciality;
+          }
+          work()
+          {
+            super.work();
+            console.log("Doctor work as ",this.speciality);
+          }
+      }
+      let h = new Human("Tk",12);
+      console.log(h);
+      h.display();
+      console.log("H ",h.name);
+
+      let dr1 = new Doctor("Dr Aung Min",24,"General Health");
+      dr1.display();
+      dr1.work();
+    </script>
+</html>

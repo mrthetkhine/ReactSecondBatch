@@ -1,0 +1,26 @@
+<html>
+    
+    <script>
+      "use strict";  
+     
+      function Child()
+      {
+      }
+      function Parent()
+      {
+
+      }
+      //Child.prototype = Parent.prototype;
+      console.log("new Child() instanceof Parent ", new Child() instanceof Parent)
+
+      let p = Child.prototype;
+      let con = p.constructor;
+
+      console.log("Constructor ",con);
+      console.log("con== Child ",con === Child);
+      console.log("con== Child ",p.constructor);
+
+      let child = new Child();
+      console.log("child.constructor == Child ",child.constructor == Child);
+    </script>
+</html>

@@ -1,0 +1,40 @@
+<html>
+    
+    <script>
+      "use strict";  
+     
+      function Human(name,age)
+      {
+          this.name = name;
+          this.age = age;
+
+          this.work = function()
+          {
+              console.log(this.name + " is working");
+          }
+
+      }
+      /*
+      Human.prototype.display = function()
+      {
+        console.log("Name ",this.age);
+        console.log("Age ",this.age);
+      }
+      */
+    
+      Human.prototype = {
+            display : function()
+            {
+                console.log("Name ",this.age);
+                console.log("Age ",this.age);
+            }
+      }
+      Human.prototype = Parent.prototype;
+      let h = new Human("Tk",37);
+      h.display();
+      console.log("H ",h);
+      h.work();
+      console.log("h instanceof Human",h instanceof Human);
+      console.log("h instanceof Object",h instanceof Object);
+    </script>
+</html>
