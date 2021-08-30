@@ -1,0 +1,34 @@
+<html>
+    
+    <script>
+      "use strict";  
+     
+      class Human
+      {
+        name = "";
+        age = 0;
+        #bankAccount = "129292";
+
+        get account()
+        {
+            return this.#bankAccount;
+        }
+
+      }
+      Human.prototype.display = function()
+      {
+          console.log("Name ",this.name, " Age  ",this.age);
+      }
+      let h = new Human();
+      console.log("H ",h);
+      console.log("Account ",h.account);
+      h.display();
+
+      String.prototype.toOurLower = function()
+      {
+          return this.toLowerCase()+ " Hi";
+      }
+      console.log("Hello".toOurLower());
+      //console.log(" Direct ",h.#bankAccount);
+    </script>
+</html>

@@ -1,0 +1,34 @@
+<html>
+    
+    <script>
+      "use strict";  
+     
+      class Shape
+      {
+          draw()
+          {
+              console.log("Shape draw");
+          }
+      }
+      class Rectangle extends Shape
+      {
+          draw()
+          {
+              super.draw();
+            console.log("Rectangle draw");
+          }
+      }
+      class Artist
+      {
+          draw()
+          {
+            console.log("Artist draw");
+          }
+      }
+      let obj = new Rectangle();
+      obj.draw();
+
+      obj = new Artist();
+      obj.draw();//Duck typing
+    </script>
+</html>

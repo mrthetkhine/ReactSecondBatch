@@ -1,0 +1,34 @@
+<html>
+    
+    <script>
+      "use strict";  
+     
+      class Circle
+      {
+          constructor(radius)
+          {
+              this._radius = radius;
+          }
+          get area()
+          {
+              return Math.PI * this._radius * this._radius;
+          }
+          set radius(newValue)
+          {
+            if(newValue >0)
+            {
+                this._radius = newValue;
+            }
+          }
+
+      }
+      let c = new Circle(12);
+      console.log("Area ",c.area);
+      
+      c.radius = 10;
+      console.log("Area ",c.area);
+
+      c.radius = -10;
+      console.log("Area ",c.area);
+    </script>
+</html>

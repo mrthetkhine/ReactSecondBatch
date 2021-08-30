@@ -1,0 +1,40 @@
+<html>
+    
+    <script>
+      "use strict";  
+     
+      class Car
+      {
+          engine;//Dependency
+
+          constructor(engine)//Dependency Inversion
+          {
+              this.engine = engine;
+          }
+          start()
+          {
+              console.log("Car start");
+              this.engine.start();
+          }
+      }
+      class Engine
+      {
+          start()
+          {
+              console.log("Engine start");
+          }
+      }
+      class ElectircEngine
+      {
+        start()
+          {
+              console.log("Electric Engine start");
+          }
+      }
+
+      let engine = new ElectircEngine();
+      let car = new Car(engine);
+      car.start();
+      
+    </script>
+</html>

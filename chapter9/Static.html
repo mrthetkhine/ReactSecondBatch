@@ -1,0 +1,26 @@
+<html>
+    
+    <script>
+      "use strict";  
+     
+      class Utility
+      {
+          static something = "Hello"
+          constructor()
+          {
+              //this.something = "Hello"
+          }
+          static method()
+          {
+            console.log("Static method ",this.something);
+          }
+      }
+      Utility.method();
+      let obj = new Utility();
+      Utility.something = "Change";
+
+      
+      console.log("Something ",Utility.something);
+      //obj.method();
+    </script>
+</html>
