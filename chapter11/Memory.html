@@ -1,0 +1,13 @@
+<html>
+    <script>
+       let arr = new Array(10000000);
+       //alert("Step 1");
+       let arr2 = arr;
+       let arr3 = arr;
+       arr = null; //GC cannot collect
+       //alert("Step 2");
+       //arr2 = null;
+       //alert("Step 3");//GC can collect now
+
+    </script>
+</html>

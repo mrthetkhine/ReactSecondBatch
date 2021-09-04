@@ -1,0 +1,59 @@
+<html>
+    <script>
+        let map = new Map([
+            ["one",1],
+            ["two",2],
+        ]);
+        console.log("map ",map);
+
+        let obj = {
+            "one":1,
+            "two":2,
+            "one":100,
+        };
+        let map2 = new Map(Object.entries(obj));
+        console.log("Map 2 ",map2);
+
+        map2.set("one",300);
+        map2.set("two",200);
+        map2.set("three",400);
+        map2.set("four",{
+            name:"Ok"
+        });
+        console.log("Map ",map2);
+
+        let value = map2.get("one");
+        console.log("value ",value);
+
+        value = map2.get("key1");
+        console.log("get noexist key ",value);
+
+        console.log("map2 has key ",map2.has("one"));
+        map2.delete("one");
+        console.log("Map2 ",map2);
+
+        console.log("map2.size  ",map2.size);
+        //map2.clear();
+        console.log("Map2 ",map2);
+
+        for(let [key,value] of map2)
+        {
+            console.log("Key ",key, " value ",value);
+        }
+        for(let entry of map2)
+        {
+            console.log("entry ",entry)
+        }
+        console.log("map2.keys ",map2.keys());
+        console.log("map2.value ",map2.values());
+        console.log("map2.entries ",map2.entries());//[...map2.entries()]
+        console.log("map2.keys to array ",[... map2.keys()]);//[...map2.entries()]
+        for(let k of map2.keys())
+        {
+            console.log("Key=> ",k);
+        }
+        map2.forEach((value,key)=>{
+            console.log("Action on key", key ,'=>',value);
+        });
+    </script>
+</html>

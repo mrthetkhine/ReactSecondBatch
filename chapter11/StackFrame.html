@@ -1,0 +1,33 @@
+<html>
+    <script>
+        /*
+        [
+            two,three?
+        ]*/
+        function funcOne()
+        {
+            let two = "Something";
+            let three = "Hello";
+            console.log("Func one");
+
+            funcTwo();
+        }
+        /*
+        [four,five]
+        */
+        function funcTwo()
+        {
+            let four = 4;
+            let five = 5;
+            console.log("Func two");
+        }
+        funcOne();
+        let obj = {
+            name :"I am one"
+        };
+        let obj2 = obj;
+
+        obj2 = null;
+        obj = null;
+    </script>
+</html>

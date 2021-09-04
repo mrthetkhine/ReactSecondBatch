@@ -1,0 +1,38 @@
+<html>
+    <script>
+        let set = new Set([1,2,3,4,1,1,2]);
+        console.log("set ",set);
+
+        let set2 = new Set("Mississpi");
+        console.log("set2 ",set2);
+        console.log("Set size ",set2.size);
+
+        set2.add("K");
+        set2.add(true);
+        set2.add(1);
+        
+        console.log("set2 after add ",set2);
+
+        set2.delete(1);
+        console.log("set2 after delete",set2);
+
+        //set2.clear();
+        console.log("set2 clear ",set2);
+
+        console.log("set2.has('K') ",set2.has("K"));
+
+        for(let p of set2)
+        {
+            console.log("Set memeber ",p);
+        }
+        set2.forEach( (x)=>{
+            console.log("Action on x ",x);
+        });
+        let arr = [...set2];
+        console.log("arr ",arr);
+
+        let arr2 = [10,20,30,10,90,20,100];
+        arr2 = [... new Set(arr2)];
+        console.log("Remove duplicate ",arr2);
+    </script>
+</html>
