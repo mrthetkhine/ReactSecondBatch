@@ -1,0 +1,12 @@
+<html>
+    <script>
+        let pattern = /^\d{5,11}$/i;
+        console.log("1829293833", "1829293833".match(pattern));
+        console.log("1829293833eef", "1829293833eef".match(pattern));
+        
+        pattern = /\D{5,11}$/i;
+        console.log("1829293833", "1829293833".match(pattern));
+        console.log("1829293833eef", "1829293833eef".match(pattern));
+        console.log("1829293833eefeageageaeage", "1829293833eefeageageaeage".match(pattern));
+    </script>
+</html>

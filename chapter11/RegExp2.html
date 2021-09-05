@@ -1,0 +1,28 @@
+<html>
+    <script>
+        let pattern = /^a*b*$/i;
+        console.log("aaa =>", "aaa".match(pattern));
+        console.log("aaabbb =>", "aaabbb".match(pattern));
+        console.log("ab =>", "ab".match(pattern));
+        console.log("abc =>", "abc".match(pattern));
+        console.log("aabbccc =>", "aabbccc".match(pattern));
+        console.log("aaaccbbb =>", "aaaccbbb".match(pattern));
+
+        pattern = /^a+b+$/i;
+        console.log("aaa =>", "aaa".match(pattern));
+        console.log("aaabbb =>", "aaabbb".match(pattern));
+        console.log("ab =>", "ab".match(pattern));
+        console.log("abc =>", "abc".match(pattern));
+        console.log("aabbccc =>", "aabbccc".match(pattern));
+        console.log("aaaccbbb =>", "aaaccbbb".match(pattern));
+
+        console.log("");
+        pattern = /^a+b+c?$/i;
+        console.log("aaa =>", "aaa".match(pattern));
+        console.log("aaabbb =>", "aaabbb".match(pattern));
+        console.log("ab =>", "ab".match(pattern));
+        console.log("abc =>", "abc".match(pattern));
+        console.log("aabbccc =>", "aabbccc".match(pattern));
+        console.log("aaaccbbb =>", "aaaccbbb".match(pattern));
+    </script>
+</html>

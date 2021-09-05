@@ -1,0 +1,19 @@
+<html>
+    <script>
+        let pattern = /^[a-zA-Z]+[a-zA-Z]*/i;
+        console.log("abab =>", "abab".match(pattern));
+        console.log("aaabbb =>", "aaabbb".match(pattern));
+        console.log("2ab =>", "2ab".match(pattern));
+        console.log(" =>", "".match(pattern));
+        
+        pattern = /[^a-zA-Z]+/i;
+
+        console.log("abab =>", "abab".match(pattern));
+        console.log("aaabbb =>", "aaabbb".match(pattern));
+        console.log("28382#@# =>", "28382#@#".match(pattern));
+       
+        
+        
+       
+    </script>
+</html>

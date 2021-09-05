@@ -1,0 +1,17 @@
+<html>
+    <script>
+        let pattern = /^(ab)*$/i;
+        console.log("abab =>", "abab".match(pattern));
+        console.log("aaabbb =>", "aaabbb".match(pattern));
+        console.log("ab =>", "ab".match(pattern));
+        console.log(" =>", "".match(pattern));
+        
+
+        pattern = /^(ab|cd)*$/i;
+        console.log("abab =>", "abab".match(pattern));
+        console.log("abcdabab =>", "abcdabab".match(pattern));
+        console.log("abcd =>", "abcd".match(pattern));
+        console.log("ababcd=>", "ababcd".match(pattern));
+       
+    </script>
+</html>

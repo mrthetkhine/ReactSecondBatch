@@ -1,0 +1,16 @@
+<html>
+    <script>
+        let pattern = /^\w+/i;
+        console.log("abab_ =>", "abab_".match(pattern));
+        console.log("_ =>", "_".match(pattern));
+        console.log("90902 =>", "90902".match(pattern));
+        console.log(" =>", "".match(pattern));
+        
+        pattern = /\W+/i;
+    
+        console.log("abab =>", "abab".match(pattern));
+        console.log("aaabbb =>", "aaabbb".match(pattern));
+        console.log("28382#@# =>", "28382#@#".match(pattern));
+        
+    </script>
+</html>

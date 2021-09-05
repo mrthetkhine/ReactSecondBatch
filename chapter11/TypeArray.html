@@ -1,0 +1,23 @@
+<html>
+    <script>
+        let byteArr = new Uint8Array(1024);
+        console.log("ByteArr ",byteArr);
+
+        let pattern = new Uint8Array([1,2,3,4,]);
+        byteArr.set(pattern,5);
+        console.log("ByteArr ",byteArr);
+        let slice = byteArr.slice(0,12) ;
+        slice[0] =100;
+        console.log("Slice(0,12) ",slice);
+        console.log("Org Array ",byteArr);
+
+        let subArray = byteArr.subarray(0,12);
+        subArray[0] = 200;
+        console.log("Org Array ",byteArr);
+
+        console.log("SubArray buffer ",subArray.buffer == byteArr.buffer);
+        console.log("SubArray byteoffest ",subArray.byteOffset)
+        console.log("SubArray offeset length  ",subArray.byteLength)
+
+    </script>
+</html>

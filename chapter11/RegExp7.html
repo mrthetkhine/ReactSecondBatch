@@ -1,0 +1,15 @@
+<html>
+    <script>
+        let pattern = /^\s+\w*/i;
+        console.log("  abab_ =>", "  abab_".match(pattern));
+        console.log(" _ =>", "  _".match(pattern));
+        console.log("90902 =>", " 90902".match(pattern));
+        console.log(" =>", "".match(pattern));
+      
+        pattern = /^\S+\w*/i;
+        console.log("  abab_ =>", "  abab_".match(pattern));
+        console.log(" _ =>", "  _".match(pattern));
+        console.log("90902 =>", "90902".match(pattern));
+        console.log(" =>", "".match(pattern));
+    </script>
+</html>

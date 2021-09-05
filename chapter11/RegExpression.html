@@ -1,0 +1,16 @@
+<html>
+    <script>
+        let pattern = /s$/i;
+        console.log("does =>", "does".match(pattern));
+        console.log("doeS =>", "doeS".match(pattern));
+        console.log("hello =>", "hello".match(pattern));
+        console.log("his =>", "his".match(pattern));
+        console.log("kiss =>", "kiss".match(pattern));
+        console.log("kiss2 =>", "kiss 2".match(pattern));
+
+        let pattern2 = /^a.*s$/i;
+        console.log("ass =>", "ass".match(pattern2));
+        console.log("as =>", "as".match(pattern2));
+        console.log("afass =>", "afass".match(pattern2));
+    </script>
+</html>
