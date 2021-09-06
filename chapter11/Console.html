@@ -1,0 +1,42 @@
+<html>
+    <script>
+        let obj = [{
+            name:"Tk",
+            age : 36,
+        }]  
+        console.log("Obj ",obj);
+        obj[0].age ++;
+        console.log("Obj ",obj);
+        console.error("Hey catch me");
+        console.debug("Debug");
+        console.warn("Warn");
+        console.info("It is info");
+
+        function hello()
+        {
+            console.assert(hello.arguments.length == 2, "Function accept 2 argument");
+            console.trace("Hello invoked");
+        }
+        hello();
+        hello('',1);
+        console.table(obj);
+        console.trace(obj);
+        console.log("Hello");
+        console.log("Hello");
+        console.count("Hello");
+        console.count("Hello");
+        console.log("Hello");
+
+        console.group("Group Start");
+        console.log("Group Here");
+        console.groupEnd("End");
+        console.log("After group");
+        console.time("hello performance");
+        hello();
+        hello('',1);
+        console.timeLog("hello performance");
+        console.timeEnd("hello performance");
+
+        console.log("total = %d ",1929);
+    </script>
+</html>

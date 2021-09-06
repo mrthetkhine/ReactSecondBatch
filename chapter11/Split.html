@@ -1,0 +1,19 @@
+<html>
+    <script>
+        let dateStr = "12/08/1972";
+        let dateArr = dateStr.split("/");
+        console.log("DateArr ",dateArr);
+        let url = /(\w+):\/\/([\w.]+)\/(\S*)/;
+        let text = "Visit my blog at http://www.example.com/~david";
+
+        console.log("text.test ",url.test(text));
+
+        let pattern = /Java/g;
+        text = "JavaScript > Java";
+        let match;
+        while((match = pattern.exec(text)) !== null) {
+            console.log(`Matched ${match[0]} at ${match.index}`);
+            console.log(`Next search begins at ${pattern.lastIndex}`);
+        }
+    </script>
+</html>

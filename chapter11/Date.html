@@ -1,0 +1,20 @@
+<html>
+    <script>
+        let date = new Date();
+        console.log("Date ",date);
+
+        let anotherDate = new Date(2021,8,6);
+        console.log("Another Date ",anotherDate);
+        console.log("Mili ",+anotherDate);
+        console.log("Full year ",date.getFullYear());
+        console.log("get Month  ",date.getMonth());
+
+        let start = Date.now();
+        for(let i=0;i< 10;i++)
+        {
+            new Array(10000)+new Array(10000);
+        }
+        let end = Date.now();
+        console.log("Time ", end-start)
+    </script>
+</html>

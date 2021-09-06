@@ -1,0 +1,20 @@
+<html>
+    <script>
+        let url = new URL("http://www.google.com/somewhere#page");    
+        console.log("Href ",url.href);
+        console.log("host ",url.host);
+        console.log("pathname ",url.pathname);
+        console.log("protocol ",url.protocol);
+        console.log("port ",url.port);
+        console.log("origin ",url.origin);
+
+        let param = new URLSearchParams();
+        param.append("query","java script")
+        url.search = param;
+        console.log("Url ",url);
+
+        let encode = encodeURI("http://www.google.com/search?q=hello javascript");
+        console.log("encode url ", encode);
+        console.log("decode url ", decodeURI(encode));
+    </script>
+</html>

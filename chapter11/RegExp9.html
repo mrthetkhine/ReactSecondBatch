@@ -1,0 +1,17 @@
+<html>
+    <script>
+        //username@gmail.com
+        let email = /^\w{3,}@\w{3,}\.\w{3}$/gi;
+        let userEmail = "username@gmail.com";
+        console.log(userEmail.match(email));
+        console.log("Email hello@gmail", "hello@gmail".match(email));
+        console.log("Email hello@.com3", "hello@.com3".match(email));
+
+        console.log("JavaScript search", "JavaScript".search(/Script/ui));
+
+        let str = "javascript programming";
+        console.log("str ", str.replace(/javascript/ui,"JavaScript"));
+       
+        //<Hello/> => React.createEl
+    </script>
+</html>

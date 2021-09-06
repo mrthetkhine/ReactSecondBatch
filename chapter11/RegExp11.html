@@ -1,0 +1,9 @@
+<html>
+    <script>
+        let vowel = /[aeiou]/y; // Sticky vowel match
+        console.log("test".match(vowel));
+        console.log("Last Index ",vowel.lastIndex); 
+        vowel.lastIndex = 1;
+        console.log("test".match(vowel));
+    </script>
+</html>
