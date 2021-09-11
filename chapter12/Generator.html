@@ -1,0 +1,22 @@
+<html>
+    <script>
+       function* nextItem()
+       {
+           yield 1;
+           yield 2;
+           yield 3;
+           return 4;
+       }
+       let item = nextItem();
+       console.log("Next ",item.next())
+       console.log("Next ",item.next())
+       console.log("Next ",item.next())
+       console.log("Next ",item.next())
+       console.log("Next ",item.next())
+
+       for(let item of nextItem())
+       {
+           console.log("Item ",item);
+       }
+    </script>
+</html>

@@ -1,0 +1,23 @@
+<html>
+    <script>
+       function* nextItem()
+       {
+         yield 1;
+         yield 2;
+         throw Error("Error====")   
+         yield 3;
+       }
+       let gen = nextItem();
+       /*
+       console.log("Next ",gen.next("a"));
+       console.log("Next ",gen.next("b"));
+       console.log("Next ",gen.next("c"));
+       console.log("Next ",gen.next());
+       */
+      for(let item of nextItem())
+      {
+          console.log("Item ",item);
+      }
+
+    </script>
+</html>

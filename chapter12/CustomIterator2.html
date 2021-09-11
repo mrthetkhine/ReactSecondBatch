@@ -1,0 +1,72 @@
+<html>
+    <script>
+       class Staff
+       {
+           constructor(staffName)
+           {
+               this.staffName = staffName;
+           }
+       }
+       class Dept
+       {
+           constructor(staffs)
+           {
+               this.staffs = staffs
+           }
+       }
+       let emp1 = new Staff("Staff One");
+       let emp2 = new Staff("Staff Two");
+
+       let emp3= new Staff("Staff Thre");
+       let emp4 = new Staff("Staff Four");
+
+       let hr = new Dept([emp3,emp4])
+       let company = [
+            emp1,
+            emp2,
+            hr
+       ]
+       function companyToStaff(list)
+       {
+           let staffList = [];
+           for(let item of list)
+           {
+               if(item instanceof Staff)
+               {
+                   staffList.push(item)
+               }
+               else
+               {
+                   staffList.push(...item.staffs);
+               }
+           }
+           return staffList;
+       }
+       let staffs = companyToStaff(company)
+       console.log("Company ",staffs);
+
+       function* staffGenerator(list)
+       {
+           for(let item of list)
+           {
+               if(item instanceof Staff)
+               {
+                   yield item;
+               }
+               else
+               {
+                   for(let ds of item.staffs)
+                   {
+                        yield ds;
+                   }
+                   
+               }
+           }
+           
+       }
+       for(let staff of staffGenerator(company))
+       {
+           console.log("Staff ",staff)
+       }
+    </script>
+</html>

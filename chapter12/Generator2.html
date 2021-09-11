@@ -1,0 +1,18 @@
+<html>
+    <script>
+       function* nextItem()
+       {
+           let y1 = yield 1;
+           console.log("Y1 is ",y1);
+           let y2 = yield 2;
+           console.log("Y2 is ",y2);
+           yield 3;
+           return 4;
+       }
+       let gen = nextItem();
+       console.log("Next ",gen.next("a"));
+       console.log("Next ",gen.next("b"));
+       console.log("Next ",gen.next("c"));
+       console.log("Next ",gen.next());
+    </script>
+</html>

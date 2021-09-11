@@ -1,0 +1,29 @@
+<html>
+    <script>
+       let sum = 0;
+       for(let i of [1,2,3,4])
+       {
+           sum+=i;
+       }
+       console.log("Sum ",sum)
+
+       let iterable = [99,100];
+       let iterator = iterable[Symbol.iterator]();
+       console.log("Iterator ",iterator)
+       /*
+       console.log("Next ",iterator.next());
+       console.log("Next ",iterator.next());
+       console.log("Next ",iterator.next());
+       */
+      for(let result = iterator.next(); 
+        !result.done; 
+        result = iterator.next()) 
+      {
+        console.log(result.value) // result.value == 99 
+      }
+      for(let i of iterable)
+      {
+          console.log("Item ",i);
+      }
+    </script>
+</html>

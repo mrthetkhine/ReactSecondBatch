@@ -1,0 +1,59 @@
+<html>
+    <script>
+       //1,10  
+       class Range
+       {
+           constructor(start,stop)
+           {
+               this.start = start;
+               this.stop = stop;
+               this.current = start;
+           }
+           [Symbol.iterator]() {
+               //console.log("Call Symbol.iterator ",this);
+                let that = this;
+                function next()
+                {
+                    //console.log("next this ",that)
+                    //console.log("Call next ",that.current, " stop ",that.stop)
+                    if( that.current< that.stop)
+                    {
+                        return {
+                            value : that.current++,
+                            done : false
+                        }
+                    }
+                    else
+                    {
+                        return {
+                            value : undefined,
+                            done : true
+                        }
+                    }
+                }
+           
+                
+               return {
+                    next:next,
+                    [Symbol.iterator]() { return this; }
+               } 
+           }    
+           
+       }
+       let iterator = new Range(1,3);
+       /*
+       console.log("Iterator ",iterator.next());
+       console.log("Iterator ",iterator.next());
+       console.log("Iterator ",iterator.next());
+       console.log("Iterator ",iterator.next());
+       */
+      let obj = {};
+      obj["else if"] = 100;
+      console.log(obj);
+       console.log("Symbol iterator ",[Symbol.iterator]);
+      for(let i of iterator)
+      {
+          console.log("Item ",i);
+      }
+    </script>
+</html>
