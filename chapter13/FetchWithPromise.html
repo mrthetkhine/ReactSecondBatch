@@ -1,0 +1,22 @@
+<html>
+    
+    <script>
+        let url = "https://jsonplaceholder.typicode.com/todos/1";
+        fetch(url)
+            .then(res=>{
+                console.log("Response ",res);
+                return res.json();
+            })
+            .then(json=>{
+                console.log("JSON is ",json);
+                //throw Error();
+                return json.title;
+            })
+            .then(another=>{
+                console.log("Another ",another);
+            })
+            .catch(error=>{
+                console.log("error")
+            })
+    </script>
+</html>
