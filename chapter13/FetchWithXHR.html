@@ -1,0 +1,37 @@
+<html>
+    
+    <script>
+        let url = "https://jsonplaceholder.typicode.com/todos/1";
+        function get(url,callback)
+        {
+            let request = new XMLHttpRequest();
+            request.open("GET",url);
+            request.send();
+
+            request.onload = function()
+            {
+                if(request.status == 200)
+                {
+                    let text = request.responseText;
+                    callback(null,text);
+                }
+                else
+                {
+                    callback(Error(response.statusText),null)
+                }
+            }
+            request.onerror = function(e)
+            {
+                callback(Error(e),null)
+            }
+        }
+        function process(err,data)
+        {
+            if(!err)
+            {
+                console.log("data >> ",data);
+            }
+        }
+        get(url,process);
+    </script>
+</html>

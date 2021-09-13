@@ -1,0 +1,37 @@
+<html>
+    
+    <script>
+        let url = "https://jsonplaceholder.typicode.com/todos/1";
+        function ourfetch(url)
+        {
+            return new Promise((resolve,reject)=>{
+                let request = new XMLHttpRequest();
+                request.open("GET",url);
+                request.send();
+
+                request.onload = function()
+                {
+                    if(request.status == 200)
+                    {
+                        let text = request.responseText;
+                        resolve(text);
+                    }
+                    else
+                    {
+                        reject(new Error(response.statusText));
+                    }
+                }
+                request.onerror = function(e)
+                {
+                    reject(new Error(e));
+                }
+            });
+            
+        }
+       
+        console.log("Before");
+        ourfetch(url).then(data=>JSON.parse(data))
+                     .then(json=>console.log("JSON ",json));
+        console.log("After");
+    </script>
+</html>

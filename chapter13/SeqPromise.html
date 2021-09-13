@@ -1,0 +1,22 @@
+<html>
+    
+    <script>
+        let url1 = "https://jsonplaceholder.typicode.com/todos/1";
+        let url2 = "https://jsonplaceholder.typicode.com/todos/2";
+        
+        fetch(url1).then(data1=>{
+            console.log("Data 1 ",data1);
+            return data1.json();
+        }).then(json1=>{
+            fetch(url2).then(data2=>{
+                console.log("Data 2",data2);
+                return data2.json();
+            })
+            .then(json2=>{
+                console.log("json1 ",json1, " json 2 ",json2);
+            })
+        });
+           
+        
+    </script>
+</html>

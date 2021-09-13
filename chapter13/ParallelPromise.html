@@ -1,0 +1,32 @@
+<html>
+    
+    <script>
+        let url1 = "https://jsonplaceholder.typicode.com/todos/1";
+        let url2 = "https://jsonplaceholder.typicode.com/todos/2";
+        let urls = [url1,url2];
+        let promises = urls.map(
+                            url=>fetch(url).then(res=>res.json()));
+        console.log("Promises ",promises);
+
+        Promise.all(promises)
+                .then(data=> console.log("Data 1",data))
+
+        Promise.all([Promise.resolve(1), Promise.reject(2)])
+            .then(data=>{
+                    console.log('Data ',data)
+                    return data;
+                }
+            ).catch(error=>{
+                console.log("Error ",error);
+            })
+        Promise.allSettled([Promise.resolve(1), Promise.reject(2)])
+        .then(data=>{
+                console.log('Data allSettled',data)
+                return data;
+            }
+        ).catch(error=>{
+            console.log("Error allSettled",error);
+        })
+               
+    </script>
+</html>

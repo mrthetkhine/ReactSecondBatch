@@ -1,0 +1,44 @@
+<html>
+    
+    <script>
+        /*
+        function div(num, divisor)
+        {
+            if(divisor == 0)
+            {
+                throw new Error("Error");
+            }
+            else
+            {
+                return num/divisor;
+            }
+        }
+        console.log("5/2 ", div(5,2));
+        try
+        {
+            console.log("5/0 ",div(5,0));
+        }
+        catch(error)
+        {
+            console.log("Error ",error)
+        }
+        console.log("Div after error");
+        */
+        function div(num, divisor)
+        {
+            if(divisor == 0)
+            {
+               
+                return Promise.reject("Divisor is zero")
+            }
+            else
+            {
+                return Promise.resolve(num/divisor);
+            }
+        }
+        div(5,2).then(result=>console.log("5/2 is",result));
+        div(5,0).then(result=>{console.log("Result ",result);},
+                      error=>{console.log("Error ",error)})
+
+    </script>
+</html>
