@@ -1,0 +1,37 @@
+<html>
+    
+    <script>
+        async function callAPI()
+        {
+            let url = "https://jsonplaceholder.typicode.com/todos/1";
+            let response = await fetch(url);
+            let json = await response.json();
+            console.log("Response ",json);
+        }
+        //callAPI();
+        
+        async function getHello()
+        {
+            console.log("Get Hello called");
+            let url = "https://jsonplaceholder.typicode.com/todos/1";
+            return fetch(url);
+        }
+        async function callHello()
+        {
+            console.log("Before call Hello");
+            let result =  await getHello();
+            fetch("https://jsonplaceholder.typicode.com/todos/2").then();
+            console.log("After getHello() ");
+            let json = await result.json();
+            console.log("Result ",json);
+        }
+        callHello();
+        console.log("I am here");
+        +async function parallel()
+        {
+            let url = "https://jsonplaceholder.typicode.com/todos/1";
+            let response = await Promise.all(url,url);
+        }();
+       
+    </script>
+</html>

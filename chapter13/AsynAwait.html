@@ -1,0 +1,34 @@
+<html>
+    
+    <script>
+        async function callAPI()
+        {
+            let url = "https://jsonplaceholder.typicode.com/todos/1";
+            let response = await fetch(url);
+            let json = await response.json();
+            console.log("Response ",json);
+        }
+        callAPI();
+        async function hello()
+        {
+            return "Hello"; //return Promoise.resolve("Hello");
+        }
+
+        function asyncHello()
+        {
+            return Promise.resolve("AsyncHello");
+        }
+        let helloPromise = hello();
+        console.log("Hello Promise ",helloPromise);   
+        hello().then(data=>{console.log("Data is ",data)});
+
+        asyncHello().then(data=>{console.log("Data is ",data)})    
+
+        async function getProblem()
+        {
+            throw "Error of getProblem()";
+        }
+        getProblem().then(data=>console.log("getProblem data ",data),
+            error=>console.log("getproblem Error ",error));
+    </script>
+</html>

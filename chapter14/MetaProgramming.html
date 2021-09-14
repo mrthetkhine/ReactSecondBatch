@@ -1,0 +1,27 @@
+<html>
+    
+    <script>
+        let obj = {
+            name: "",
+            school : "",
+            age : 37,
+            address:"",
+        }
+
+        function isNotBlank(obj)
+        {
+            return obj.name !== "" && obj.school !== "";
+        }
+        console.log("Is Not blank ",isNotBlank(obj));
+
+        const isBlank = (data)=> data === "";
+        const allBank = (fields) => fields.every(isBlank);
+        const pluck = (fileldsName,obj)=>fileldsName.map(fName =>obj[fName]);
+        
+        console.log("is blank name ",isBlank(obj.name));
+        console.log("AllBlank ",allBank([obj.name,obj.address]));
+
+        console.log("Pluck ",pluck(['name','address'],obj));
+        console.log("All blank ", allBank( pluck(['name','address','school'],obj)));
+    </script>
+</html>

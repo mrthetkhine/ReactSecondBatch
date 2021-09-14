@@ -1,0 +1,26 @@
+<html>
+    
+    <script>
+        async function loop()
+        {
+            let url1 =  "https://jsonplaceholder.typicode.com/todos/1";
+            let url2 = "https://jsonplaceholder.typicode.com/todos/2";
+            let url3 = "https://jsonplaceholder.typicode.com/todos/3";
+
+            let urlArr = [url1,url2,url3];
+            let promises = urlArr.map(url=>fetch(url));
+            for await (const promise of promises)
+            {
+                handle(promise);
+            }
+            async function handle(p)
+            {
+                let json = await p.json();
+                console.log("Promise ",json);
+                
+            }
+        }
+        loop();
+        
+    </script>
+</html>

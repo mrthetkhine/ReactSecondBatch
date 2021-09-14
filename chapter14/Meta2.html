@@ -1,0 +1,28 @@
+<html>
+    
+    <script>
+      let obj = {
+            name: "",
+            school : "",
+            age : 37,
+           
+      }
+      console.log(Object.getOwnPropertyDescriptor(obj,'age'));
+
+      Object.defineProperty(obj,"address",{
+          
+          get:function()
+          {
+              console.log("Getter ");
+              return this.__value;
+          },
+          set:function(newValue)
+          {
+              console.log("Setter ",newValue);
+              this.__value = newValue;
+          },
+      })
+      obj.address = "Somewhere";
+      console.log("obj ",obj.address);
+    </script>
+</html>

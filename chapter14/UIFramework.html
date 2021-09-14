@@ -1,0 +1,38 @@
+<html>
+    
+    <script>
+      function updateUI(newValue )
+      {
+          console.log("update UI called ",newValue);
+      }
+      function framework(obj)
+      {
+          let model={};
+          for(let prop in obj)
+          {
+            Object.defineProperty(model,prop,{
+                
+                get:function()
+                {
+                    console.log("Getter ");
+                    return this["__"+prop];
+                },
+                set:function(newValue)
+                {
+                    console.log("Setter ",newValue);
+                    this["__"+prop]= newValue;
+                    updateUI(newValue);
+                },
+            });
+            model[prop] = obj[prop];
+          }
+          return model;
+      }
+      let userObj = {
+          name :"TK",
+          age : 27,
+      };
+      let model = framework(userObj);
+      model.name = "Sea";
+    </script>
+</html>
