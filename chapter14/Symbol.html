@@ -1,0 +1,15 @@
+<html>
+    
+    <script>
+      let unit8 = {
+          [Symbol.hasInstance](x) {
+              console.log("Instnace of");
+            return Number.isInteger(x) && x >= 0 && x <= 255; 
+          }
+        }
+     
+      console.log("instance of ",128 instanceof unit8);
+      console.log("instance of ",900 instanceof unit8);
+      
+    </script>
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <body>
+    Text
+    <button type="button" id="btnClickMe"> Click me</button>
+    </body>
+    <script>
+        window.onload = function()
+        {
+            console.log("Document is ready ");
+        }
+        let btn = document.querySelector("#btnClickMe");
+        btn.onclick = function()
+        {
+            console.log("Bind with property");
+        }
+        btn.onclick = function()
+        {
+            console.log("Bind with property 2");
+        }
+        btn.addEventListener("click",function()
+        {
+            console.log("You clicked the button");
+        });
+        btn.addEventListener("click",function()
+        {
+            console.log("You clicked the button v2");
+        });
+    </script>
+</html>

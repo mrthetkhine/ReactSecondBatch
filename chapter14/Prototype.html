@@ -1,0 +1,16 @@
+<html>
+    
+    <script>
+      let obj = {
+          name:"Object"
+      }
+      let p = {
+          school :"UCSY"
+      }
+      Object.setPrototypeOf(obj,p);
+      console.log("Obj.scholl ",obj.school);
+      console.log("Prototype =>",Object.getPrototypeOf(obj));
+      console.log("Prototype =>",Object.getPrototypeOf(()=>{}));
+      
+    </script>
+</html>

@@ -1,0 +1,25 @@
+<html>
+    
+    <script>
+      let obj = {
+          name:"Object"
+      }
+      console.log("Extensible ",Object.isExtensible(obj));
+
+      Object.preventExtensions(obj);
+      console.log("Extensible ",Object.isExtensible(obj));
+      obj.age = 30;
+      console.log("Obj ",obj);
+
+      obj.name ="Update";
+      console.log("Obj ",obj);
+
+      Object.seal(obj);
+      delete obj.name;
+      console.log("Obj ",obj);
+
+      Object.freeze(obj);
+      obj.name = "Another update";
+      console.log("Obj ",obj);
+    </script>
+</html>

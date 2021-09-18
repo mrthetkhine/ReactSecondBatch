@@ -1,0 +1,32 @@
+<html>
+    
+    <script>
+        /*
+            <div>
+                <div> TK</div>
+                <div> 37</div>
+            </div>
+        */
+      let htmlCode = function (obj){
+          /*
+        return "<div><div> "+obj.name +"</div> "
+                +"<div> "+obj.age +"</div> "
+                +"</div>";
+                */
+        return `
+            <div>
+                <div>${obj.name}</div>
+                <div>${obj.age}</div>
+            </div>    
+        `;
+      }
+     
+      let obj = {
+          name :"TK",
+          age : 37
+      }
+      console.log("Code ",htmlCode(obj));
+      
+      
+    </script>
+</html>

@@ -1,0 +1,20 @@
+<html>
+    <body>
+       Time <div id="clock"> It is clock </div>
+    </body>
+    <script>
+        function updateTime()
+        {
+            let clock = document.querySelector("#clock");
+            clock.textContent = (new Date()).toString();
+        }
+        setInterval(updateTime,1000);
+
+        let body = document.body;
+        let divEle = document.createElement("div");
+        let textNode = document.createTextNode("<script>alert('Here is the text')<//script>");
+        divEle.appendChild(textNode);
+
+        body.appendChild(divEle);
+    </script>
+</html>
