@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <style>
+            .region{
+            width:100px;
+            height:100px;
+            border:1px solid gray;
+        }
+        .child_div
+        {
+            width:50px;
+            height:50px;
+            border:1px solid blue;
+        }
+        </style>
+       
+    </head>
+    <body>
+    Text
+    <button type="button" id="btnClickMe"> Click me</button>
+
+    <div id="divTestMouse" class="region"> 
+        Parent
+        <div id="childDiv" class="child_div">
+            Child 
+        </div>
+    </div>
+    </body>
+    <script>
+        
+        let div = document.querySelector("#divTestMouse");
+        div.addEventListener("click",function(e){
+            console.log("Parent Click  ",e);
+        },{
+            capture:true
+        });
+       
+        let childDiv = document.querySelector("#childDiv");
+        childDiv.addEventListener("click",function(e){
+            console.log("Child Click  ",e);
+        },{
+            capture:true
+        });
+        document.body.addEventListener("click",(e)=>{
+            console.log("Document click ",e);
+        },{
+            capture:true
+        })
+    </script>
+</html>

@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <style>
+            .region{
+            width:100px;
+            height:100px;
+            border:1px solid gray;
+        }
+        .child_div
+        {
+            width:50px;
+            height:50px;
+            border:1px solid blue;
+        }
+        </style>
+       
+    </head>
+    <body>
+    Text
+    <button type="button" id="btnClickMe"> Click me</button>
+
+    <table id="tblElement" > 
+        <tr>
+            <td> Element1</td>
+        </tr>    
+        <tr>
+            <td> Element2</td>
+        </tr> 
+        <tr>
+            <td> Element3</td>
+        </tr> 
+        <tr>
+            <td> Element4</td>
+        </tr> 
+    </table>
+    </body>
+    <script>
+        
+        let tblElement = document.querySelector("#tblElement");
+        tblElement.addEventListener("click",function(e){
+            console.log("Table row Click  ",e.target);
+            console.log("Event type ",e.type);
+            console.log("Current target ",e.currentTarget);
+        });
+       
+       
+    </script>
+</html>

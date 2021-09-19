@@ -1,0 +1,25 @@
+<html>
+    <head>
+     
+    </head>
+    <body>
+    Text
+    <button type="button" id="btnClickMe"> Click me</button>
+
+    <a  id="ourLink" href="http://www.google.com"> 
+       This is a link
+    </a>
+    </body>
+    <script>
+        document.addEventListener("click",(e)=>{
+            console.log("click fired ",e);
+        })
+        document.addEventListener("dataReady",(e)=>{
+            console.log("Data Ready fired ",e);
+        })
+       let clickMe = document.querySelector("#btnClickMe");
+       clickMe.addEventListener("click",(e)=>{
+            document.dispatchEvent(new CustomEvent("dataReady"),{data:"Event Data"})
+       });
+    </script>
+</html>

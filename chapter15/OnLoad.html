@@ -1,7 +1,21 @@
 <html>
+    <head>
+        <style>
+            .region{
+            width:100px;
+            height:100px;
+            border:1px solid gray;
+        }
+        </style>
+       
+    </head>
     <body>
     Text
     <button type="button" id="btnClickMe"> Click me</button>
+
+    <div id="divTestMouse" class="region"> 
+        Test mouse
+    </div>
     </body>
     <script>
         window.onload = function()
@@ -24,6 +38,13 @@
         btn.addEventListener("click",function()
         {
             console.log("You clicked the button v2");
+        });
+        let div = document.querySelector("#divTestMouse");
+        div.addEventListener("mousemove",function(e){
+            console.log("Mouse move ",e);
+        });
+        div.addEventListener("mouseover",function(e){
+            console.log("Mouse over ",e);
         });
     </script>
 </html>

@@ -1,0 +1,26 @@
+<html>
+    <head>
+     
+    </head>
+    <body>
+    Text
+    <button type="button" id="btnClickMe"> Click me</button>
+
+    <a  id="ourLink" href="http://www.google.com"> 
+       This is a link
+    </a>
+    </body>
+    <script>
+        
+        let link = document.querySelector("#ourLink");
+        link.addEventListener("click",function(e){
+            console.log("Lik Clicked ",e);
+            e.preventDefault();
+        });
+       document.body.addEventListener("contextmenu",e=>{
+        console.log("Doc right clicked ",e);
+        e.preventDefault();
+       });
+       
+    </script>
+</html>
