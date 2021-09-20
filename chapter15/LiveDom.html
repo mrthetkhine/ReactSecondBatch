@@ -1,0 +1,24 @@
+<html>
+    <body>
+       <div id="container">
+            <h2>One</h2>
+            <h2>Two</h2>
+            <h2>Three</h2>
+            <h2>Four</h2>
+       </div>
+    </body>
+    <script>
+         let h2s = document.getElementsByTagName("h2");
+         console.log("h2 ",h2s);
+         let container = document.getElementById("container");
+
+         for(let i=0, len = h2s.length; i < len;i++)
+         {
+            let newH2 = document.createElement("h2");
+            let textNode = document.createTextNode("Test "+i);
+            newH2.appendChild(textNode);
+            
+            container.append(newH2);
+         }
+    </script>
+</html>

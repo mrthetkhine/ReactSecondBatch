@@ -1,0 +1,56 @@
+<html>
+    <style>
+        .one
+        {
+            color:blue;
+        }
+        .two
+        {
+            background-color: gray;
+        }
+        .three
+        {
+            background-color: green;
+        }
+    </style>
+   
+    <body>
+        <div id="container" align="right" class="one two"
+        data-section-number="16.1">
+            Container
+            <div id="parent">
+                Parent
+                <div id="child">
+                    Child
+                </div>
+            </div>
+            <div id="sibliingOfParent">
+                Sibling ^^^
+             
+            </div>
+        </div>
+        <form>
+
+        </form>
+      
+    </body>
+    <script>
+        let con = document.getElementById("container");
+        con.setAttribute("align","left");
+        console.log("Get Attributes ",con.getAttribute("align"));
+        console.log("Has Attributes ",con.hasAttribute("align"));
+
+        con.removeAttribute("align");
+
+        document.forms[0].action = "http://www.google.com"
+        con.align = "left";
+
+        console.log("Class ",con.classList);
+        con.classList.remove("two")
+        con.classList.add("three")
+
+        let sectinNo = con.dataset.sectionNumber;
+        console.log("Section No ",sectinNo);
+        con.dataset.sectionNumber= 100;
+    </script>
+</html>

@@ -1,0 +1,18 @@
+<html>
+    <body>
+       Time <a href="#somewhere" id="lnkOne"> 
+           <span>
+            Link One 
+            </span>
+        </a>
+        
+    </body>
+    <script>
+         let link = document.getElementById("lnkOne");
+         link.addEventListener("click",(e)=>{
+            console.log("Event ",e.target);
+            let hyperLink = e.target.closest("span");
+            console.log("Hyperlink ",hyperLink);
+         });
+    </script>
+</html>

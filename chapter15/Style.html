@@ -1,0 +1,22 @@
+<html>
+    <style>
+       
+    </style>
+   
+    <body>
+        <p id="container">
+            This is 1st paragarph
+        </p>
+        <p>
+            This is 2st paragarph
+        </p>
+      
+    </body>
+    <script>
+        let container = document.getElementById("container");
+        container.style.color = "green";
+        container.style.background = "green";
+        console.log("Css text ",container.style.cssText);
+        container.style.cssText = "color:blue;border:1px solid green;"
+    </script>
+</html>

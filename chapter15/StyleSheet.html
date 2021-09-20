@@ -1,0 +1,36 @@
+<html>
+    <style id="light">
+       body{
+           background: blue;
+       }
+    </style>
+   <style id="dark">
+    body{
+        background: gray;
+    }
+    </style>
+    <body>
+        <p id="container">
+            This is 1st paragarph
+        </p>
+        <p>
+            This is 2st paragarph
+        </p>
+        <button id="btnLightOff" type="button">Light off</button>
+        <button id="btnDarkOff" type="button">Dark off</button>
+    </body>
+    <script>
+        //let container = document.getElementById("dark");
+        //container.disabled = true;
+        let btnLightOff = document.getElementById("btnLightOff");
+        btnLightOff.addEventListener("click",(e)=>{
+            let container = document.getElementById("light");
+            container.disabled = true;
+        });
+        let btnDarkOff = document.getElementById("btnDarkOff");
+        btnDarkOff.addEventListener("click",(e)=>{
+            let container = document.getElementById("dark");
+            container.disabled = true;
+        });
+    </script>
+</html>

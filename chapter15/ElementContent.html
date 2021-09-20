@@ -1,0 +1,28 @@
+<html>
+    <style>
+       
+    </style>
+   
+    <body>
+        <div id="container">
+            Container
+            <div id="parent">
+                Parent
+               
+            </div>
+            
+        </div>
+       <button type="button" id="btnChange">Change</button>
+      
+    </body>
+    <script>
+        let con = document.getElementById("parent");
+        let btnChange = document.getElementById("btnChange");
+        btnChange.addEventListener("click",(e)=>{
+            //con.innerText = "<h1>Just plain text</h1> "
+            //con.innerHTML = "<h1>Just plain text</h1> ";
+            //con.outerHTML = "<h1>Just plain text</h1> ";
+            con.insertAdjacentHTML( 'afterend',"<h1>Just plain text</h1> ");
+        });
+    </script>
+</html>

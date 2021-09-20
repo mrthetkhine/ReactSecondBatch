@@ -1,0 +1,29 @@
+<html>
+    <style>
+       
+    </style>
+   
+    <body>
+        <p>
+            This is 1st paragarph
+        </p>
+        <p>
+            This is 2st paragarph
+        </p>
+      
+    </body>
+    <script>
+        let pars = document.querySelectorAll("p");
+        console.log("pars ",pars);
+       
+        [... pars].map((par)=>{
+            console.log("Par ",par.textContent);
+            par.textContent = par.textContent + " Updated";
+        });
+        /*
+        Array.prototype.map.call(pars, (par)=>{
+            console.log("Par ",par.textContent);
+        });
+        */
+    </script>
+</html>

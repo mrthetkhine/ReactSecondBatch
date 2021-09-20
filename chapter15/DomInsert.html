@@ -1,0 +1,25 @@
+<html>
+    <style>
+       
+    </style>
+   
+    <body>
+        <p id="container">
+            This is 1st paragarph
+        </p>
+        <p>
+            This is 2st paragarph
+        </p>
+      
+    </body>
+    <script>
+        let container = document.getElementById("container");
+        let empahsis = document.createElement("em");
+        empahsis.append("Hello");
+        container.append(empahsis);
+
+        //container.prepend(empahsis);
+        //container.after(empahsis);
+        container.before(empahsis.cloneNode(true));
+    </script>
+</html>

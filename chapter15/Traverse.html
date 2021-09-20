@@ -1,0 +1,46 @@
+<html>
+   
+    <body>
+        <div id="container">
+            Container
+            <div id="parent">
+                Parent
+                <div id="child">
+                    Child
+                </div>
+            </div>
+            <div id="sibliingOfParent">
+                Sibling ^^^
+             
+            </div>
+        </div>
+      
+    </body>
+    <script>
+         console.log("First child ",document.body.firstChild);
+         console.log("First Element child ",document.body.firstElementChild);
+         console.log("Children ",document.body.children);
+         console.log("First Element child sibling",document.body.firstElementChild.nextElementSibling);
+         console.log("Sibling ",document.getElementById("parent").nextElementSibling);
+
+         function log(domNode)
+         {
+             console.log("Dom Node ",domNode , "Type ",domNode.nodeType , " node name ",domNode.nodeName);
+         }
+         function traverse(domNode,f)
+         {
+            f(domNode);
+            for(let child of domNode.children)
+            {
+                traverse(child,f);
+            }
+         }
+         traverse(container,log);
+
+         console.log("parent of #parent ",document.getElementById("parent").parentNode);
+         console.log("childNodes of #parent ",document.getElementById("parent").childNodes);
+         console.log("fristchild of #parent ",document.getElementById("parent").firstChild);
+         console.log("lastChild of #parent ",document.getElementById("parent").lastChild.nodeValue);
+         console.log("node value of #parent sibliing ->",document.getElementById("parent").nextElementSibling.nodeValue);
+    </script>
+</html>
