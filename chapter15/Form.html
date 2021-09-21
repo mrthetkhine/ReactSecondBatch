@@ -1,0 +1,33 @@
+<html>
+    <style id="theme">
+      
+    </style>
+   
+   
+    <body>
+      <form>
+            <label> Qty </label>
+            <input type="text" id="qty"/>
+
+            <label> Price </label>
+            <input type="text" id="price"/>
+            <label> Total </label>
+            <input type="text" id="total"/>
+            <button type="button" id="btnProcess" > Process</button>
+      </form>
+     
+    </body>
+    <script>
+      let btnProcess = document.getElementById("btnProcess");
+      btnProcess.addEventListener("click",(e)=>{
+        let qty = document.getElementById("qty");
+        let price = document.getElementById("price");
+        //console.log("Name ",name.value , " Age ",age.value);
+
+        let totalAmount = parseFloat(qty.value) * parseFloat(price.value);
+        console.log("Total Amount ",totalAmount);
+        let total = document.getElementById("total");
+        total.value = totalAmount;
+      });
+    </script>
+</html>

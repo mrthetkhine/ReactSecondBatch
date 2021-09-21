@@ -1,0 +1,39 @@
+<html>
+    <style id="theme">
+      
+    </style>
+   
+    <style>
+        
+        .fadeable { 
+            opacity: 1;
+            transition: opacity 1s ease-in; 
+        }
+       
+    </style>
+    <body>
+        <p id="container" class='transparent'>
+            This is 1st paragarph
+        </p>
+        <p>
+            This is 2st paragarph
+        </p>
+        <button id="btnGo" type="button">Go Google</button>
+     
+    </body>
+    <script>
+        console.log("localstorage ",localStorage);
+
+        window.addEventListener("storage",(e)=>{
+            console.log("Event ",e);
+        });
+        let name = "It is name";
+        localStorage.name = name;
+        console.log("Name ",localStorage.name);
+
+        sessionStorage.setItem("school","UCSY");
+        console.log("Get item ",sessionStorage.getItem("school"));
+
+        console.log("Document cookie ",document.cookies);
+    </script>
+</html>

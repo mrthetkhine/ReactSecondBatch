@@ -1,0 +1,27 @@
+<html>
+    <style id="theme">
+      
+    </style>
+   
+    <style>
+        
+        .fadeable { 
+            opacity: 1;
+            transition: opacity 1s ease-in; 
+        }
+       
+    </style>
+    <body>
+       Worker Thread Demo
+        <button id="btnGo" type="button">Go Google</button>
+     
+    </body>
+    <script>
+       let worker = new Worker("worker.js");
+       console.log("Send message to woker");
+       worker.postMessage("Hello from Browser");
+       worker.onmessage = (msg)=>{
+           console.log("Got back from woker ",msg.data);
+       }
+    </script>
+</html>

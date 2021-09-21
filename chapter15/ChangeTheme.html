@@ -1,0 +1,51 @@
+<html>
+    <style id="theme">
+      
+    </style>
+   
+    <style>
+        .transparent { opacity: 0; }
+        .fadeable { 
+            opacity: 1;
+            transition: opacity 1s ease-in; 
+        }
+    </style>
+    <body>
+        <p id="container" class='transparent'>
+            This is 1st paragarph
+        </p>
+        <p>
+            This is 2st paragarph
+        </p>
+        <button id="btnAnimate" type="button">Animate</button>
+     
+    </body>
+    <script>
+        //let container = document.getElementById("dark");
+        //container.disabled = true;
+        function changeTheme(themeName){
+            let styleSheet = document.createElement("link");
+            styleSheet.id = "theme";
+            styleSheet.rel= "stylesheet";
+            styleSheet.href = `theme/${themeName}.css`;
+
+            let currentTheme = document.getElementById("theme");
+            currentTheme.replaceWith(styleSheet);
+            console.log("Stylesheet ",styleSheet);
+        }
+        changeTheme("one");
+
+        let btnAnimate = document.getElementById("btnAnimate");
+        btnAnimate.addEventListener("click",(e)=>{
+            console.log("Animate click");
+            let con = document.getElementById("container");
+            con.classList.add("fadeable");
+        });
+        let con = document.getElementById("container");
+        console.log("Bounding rectangle ",con.getBoundingClientRect());
+        
+        document.addEventListener("click",(e)=>{
+            console.log("Dom under pointer ",document.elementFromPoint(e.clientX,e.clientY));
+        });
+    </script>
+</html>

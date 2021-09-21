@@ -1,0 +1,36 @@
+<html>
+    <style id="theme">
+      
+    </style>
+   
+    <style>
+        
+        .fadeable { 
+            opacity: 1;
+            transition: opacity 1s ease-in; 
+        }
+       
+    </style>
+    <body>
+        <p id="container" class='transparent'>
+            This is 1st paragarph
+        </p>
+        <p>
+            This is 2st paragarph
+        </p>
+        <button id="btnGo" type="button">Go Google</button>
+     
+    </body>
+    <script>
+        
+
+        let btnGo = document.getElementById("btnGo");
+        btnGo.addEventListener("click",(e)=>{
+           window.location = "https://www.google.com"
+        });
+       window.onhashchange = (e)=>{
+           console.log("Hash Change ",e);
+       }
+       window.location.hash = "three";
+    </script>
+</html>

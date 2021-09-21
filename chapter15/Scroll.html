@@ -1,0 +1,35 @@
+<html>
+    <style id="theme">
+      
+    </style>
+   
+    <style>
+        
+        .fadeable { 
+            opacity: 1;
+            transition: opacity 1s ease-in; 
+        }
+        #container{
+            height:100%;
+        }
+    </style>
+    <body>
+        <p id="container" class='transparent'>
+            This is 1st paragarph
+        </p>
+        <p>
+            This is 2st paragarph
+        </p>
+        <button id="btnScroll" type="button">Scroll</button>
+     
+    </body>
+    <script>
+        
+
+        let btnScroll = document.getElementById("btnScroll");
+        btnScroll.addEventListener("click",(e)=>{
+            window.scrollTo(0,0);
+        });
+       
+    </script>
+</html>
