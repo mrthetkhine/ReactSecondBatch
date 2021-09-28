@@ -1,0 +1,63 @@
+db.posts.insert({
+    title:"New Post",
+    body:"This is body"
+});
+
+db.moveis.insert({
+    title:"Matrix",
+    year: 1990,
+    director:{
+        name: "Jame Cameron"
+    }
+});
+
+db.moveis.insertMany([{
+    title:"Titanic",
+    year: 1990,
+    director:{
+        name: "Jame Cameron"
+    }
+},
+{
+    title:"Matrix Reloaded",
+    year: 1990,
+    director:{
+        name: "Jame Cameron"
+    }
+},
+]);
+
+db.moveis.insert({
+    title:"Interstella",
+    year: 2000,
+    director:{
+        name: "Jame Cameron"
+    }
+});
+
+db.moveis.insert({
+    title:"Another Movie",
+    year: 1995,
+    director:{
+        name: "Jame Cameron"
+    }
+});
+//Query
+db.moveis.find({
+    year:1990
+});
+
+{
+    $or:
+        [
+            {title:"Titanic"},
+            { year:{$gt:1990}}
+        ]
+}
+//Nested element
+{
+    director:{ name:"Jame Cameron"}
+}
+{
+    "director.name":"Jame Cameron"
+}

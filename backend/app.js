@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let movieRouter = require('./routes/movies');
 
+const mongoose = require('mongoose');
+const { db } = require('./config/database');
 var app = express();
 
 // view engine setup
@@ -20,6 +22,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+mongoose.connect(db, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => console.log('MongoDB connected!'))
+    .catch(err => console.log(err));
 
 app.use(function (req,res,next){
   console.log("our guard middleware ",req.url);
