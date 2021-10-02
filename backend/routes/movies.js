@@ -51,8 +51,5 @@ router.delete('/:id', async (req, res) => {
         await res.status(400).json({msg: "Movie not found"})
     }
 });
-router.get('/details', function(req, res, next) {
-    console.log("Movies Details / Controller");
-    res.send('Movie Details list');
-});
+
 module.exports = router;

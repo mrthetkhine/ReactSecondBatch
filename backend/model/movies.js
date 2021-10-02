@@ -7,8 +7,13 @@ const MovieSchema = new Schema({
         required: true,
     },
     director: {
-        type: String,
-        required: true,
+        name:{
+            type: String,
+            required: true,
+        },
+        phoneNo:{
+            type: String
+        }
     },
     year: {
         type: Number
