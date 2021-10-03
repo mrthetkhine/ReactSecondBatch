@@ -1,0 +1,489 @@
+{
+	"info": {
+		"_postman_id": "dd1b6c96-5ab6-4345-88a3-51355872acf2",
+		"name": "Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "GetAllMovies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTk4MTMzODk0ZDNiMDQ0MzFiYzg1MiIsImlhdCI6MTYzMzI1NjE0OH0.YZQQa8ndIwsOH0X7tKyVU499DqxMOTwEwDbVZoWYI5I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateMovie",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTk4MTMzODk0ZDNiMDQ0MzFiYzg1MiIsImlhdCI6MTYzMzI1NjE0OH0.YZQQa8ndIwsOH0X7tKyVU499DqxMOTwEwDbVZoWYI5I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Dark Night\",\n    \"director\": {\n       \"name\": \"Christopher Nolan\",\n       \"phoneNo\":\"08828282\"\n        },\n    \"year\": 2008\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMovieById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTk4MTMzODk0ZDNiMDQ0MzFiYzg1MiIsImlhdCI6MTYzMzI1NjE0OH0.YZQQa8ndIwsOH0X7tKyVU499DqxMOTwEwDbVZoWYI5I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/movies/615321740190bc5b6b6dbb39",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"615321740190bc5b6b6dbb39"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpateMovie",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTk4MTMzODk0ZDNiMDQ0MzFiYzg1MiIsImlhdCI6MTYzMzI1NjE0OH0.YZQQa8ndIwsOH0X7tKyVU499DqxMOTwEwDbVZoWYI5I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Batman Begin \",\n    \"director\":\"Christopher Nolan\",\n    \"year\": 1988\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/6153236f9234737ecd1cf027",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"6153236f9234737ecd1cf027"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteMovie",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/615324ef4ad4291dcbdfad00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"615324ef4ad4291dcbdfad00"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "CreateReview",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTk4MTMzODk0ZDNiMDQ0MzFiYzg1MiIsImlhdCI6MTYzMzI1NjE0OH0.YZQQa8ndIwsOH0X7tKyVU499DqxMOTwEwDbVZoWYI5I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movie\":\"61582eaa0ea9b98ba3cdb30a\",\n    \"rating\":3,\n    \"review\":\"Good movie\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllReview",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTk4MTMzODk0ZDNiMDQ0MzFiYzg1MiIsImlhdCI6MTYzMzI1NjE0OH0.YZQQa8ndIwsOH0X7tKyVU499DqxMOTwEwDbVZoWYI5I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movie\":\"61582eaa0ea9b98ba3cdb30a\",\n    \"rating\":3,\n    \"review\":\"Good movie\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReviewById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTk4MTMzODk0ZDNiMDQ0MzFiYzg1MiIsImlhdCI6MTYzMzI1NjE0OH0.YZQQa8ndIwsOH0X7tKyVU499DqxMOTwEwDbVZoWYI5I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movie\":\"61582eaa0ea9b98ba3cdb30a\",\n    \"rating\":3,\n    \"review\":\"Good movie\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/reviews/61582ebf0ea9b98ba3cdb30c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reviews",
+								"61582ebf0ea9b98ba3cdb30c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateReviewById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTk4MTMzODk0ZDNiMDQ0MzFiYzg1MiIsImlhdCI6MTYzMzI1NjE0OH0.YZQQa8ndIwsOH0X7tKyVU499DqxMOTwEwDbVZoWYI5I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movie\":\"61582eaa0ea9b98ba3cdb30a\",\n    \"rating\":3,\n    \"review\":\"Good movie\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/reviews/61582ebf0ea9b98ba3cdb30c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reviews",
+								"61582ebf0ea9b98ba3cdb30c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteReviewById",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTk4MTMzODk0ZDNiMDQ0MzFiYzg1MiIsImlhdCI6MTYzMzI1NjE0OH0.YZQQa8ndIwsOH0X7tKyVU499DqxMOTwEwDbVZoWYI5I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movie\":\"61582eaa0ea9b98ba3cdb30a\",\n    \"rating\":10,\n    \"review\":\"Good movie\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/reviews/61582ebf0ea9b98ba3cdb30c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reviews",
+								"61582ebf0ea9b98ba3cdb30c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllReviewByMovieId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTk4MTMzODk0ZDNiMDQ0MzFiYzg1MiIsImlhdCI6MTYzMzI1NjE0OH0.YZQQa8ndIwsOH0X7tKyVU499DqxMOTwEwDbVZoWYI5I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movie\":\"61582eaa0ea9b98ba3cdb30a\",\n    \"rating\":3,\n    \"review\":\"Good movie\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/reviews/movie/61582eaa0ea9b98ba3cdb30a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reviews",
+								"movie",
+								"61582eaa0ea9b98ba3cdb30a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\",\n    \"password\":\"admin\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\",\n    \"password\":\"admin\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GetUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

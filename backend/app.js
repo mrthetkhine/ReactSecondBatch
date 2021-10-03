@@ -10,7 +10,9 @@ let movieRouter = require('./routes/movies');
 let reviewRouter = require('./routes/review');
 
 const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
 const { db } = require('./config/database');
+const {config} = require('./config/Config');
 var app = express();
 
 // view engine setup
@@ -33,10 +35,33 @@ app.use(function (req,res,next){
   console.log("our guard middleware ",req.url);
   next();
 });
+
+const verifyUserToken = (req, res, next) => {
+  let token = req.headers.authorization;
+  //console.log('Token ',token);
+  if (!token) return res.status(401).send("Access Denied / Unauthorized request");
+
+  try {
+    token = token.split(' ')[1] // Remove Bearer from string
+
+    if (token === 'null' || !token) return res.status(401).send('Unauthorized request');
+
+    let verifiedUser = jwt.verify(token, config.TOKEN_SECRET);   // config.TOKEN_SECRET => 'secretKey'
+    if (!verifiedUser) return res.status(401).send('Unauthorized request')
+
+    req.user = verifiedUser; // user_id
+    next();
+
+  } catch (error) {
+    console.log(error);
+    res.status(400).send("Invalid Token");
+  }
+
+}
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/movies',movieRouter);
-app.use('/reviews',reviewRouter);
+app.use('/auth', usersRouter);
+app.use('/movies',verifyUserToken, movieRouter);
+app.use('/reviews',verifyUserToken,reviewRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
