@@ -1,0 +1,34 @@
+.post
+{
+    margin:10px;
+    width:50%;
+    //border:1px solid lightgray;
+    border-radius: 10px;
+}
+.title
+{
+    height:50px;
+    border:1px solid lightgray;
+    //border-bottom:1px solid lightgray;
+    text-align: center;
+    line-height: 50px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+.body
+{
+    padding: 10px;
+    min-height: 200px;
+    border:1px solid lightgray;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.comment
+{
+    height: 30px;
+    line-height: 30px;
+    padding-right:10px;
+    text-align: right;
+    border:1px solid lightgray;
+}
