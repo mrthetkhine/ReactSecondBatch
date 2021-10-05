@@ -15,8 +15,12 @@ function PostBody(props) {
 }
 
 function PostComment(props) {
-    return <div className="comment">
-        {props.comment}
+
+    function commentClicked(id){
+        console.log("Comment clicked ",id);
+    }
+    return <div className="comment" onClick={()=>commentClicked(props.comment.id)}>
+        {props.comment.text}
     </div>;
 }
 
@@ -30,7 +34,9 @@ function Post(props){
                 <PostBody body={body}/>
                 {
                     comments.map(comment=>
-                        <PostComment comment={comment}/>)
+                        <PostComment
+                            key={comment.id}
+                            comment={comment}/>)
                 }
                 {/*<PostComment comment={comments[0]}/>
                 <div className="comment">
