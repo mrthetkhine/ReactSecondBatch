@@ -10,7 +10,9 @@ import Counter from "./components/Counter";
 import TimeDisplay from "./TimeDisplay";
 import ConditionalRendering from "./components/ConditionalRendering";
 import ListDemo from "./components/ListDemo";
-
+import FormDemo from "./components/form/FormDemo";
+import FancyBorder from "./components/pattern/composition/FanyBorder";
+import Tab from "./components/pattern/composition/Tab";
 function App() {
 
     let data = {
@@ -20,6 +22,11 @@ function App() {
             { id:1,text:"This is first comment "},
             {id:2,text:"This is second comment"}]
     }
+    let headers =[
+        "one",
+        "two",
+        "three"
+    ]
   return (
     <div>
         Hello from React
@@ -33,7 +40,29 @@ function App() {
      <Counter start={15}/>*/}
     {/*<TimeDisplay/>*/}
    {/* <ConditionalRendering/>*/}
-    <ListDemo items={data.comments}/>
+   {/* <ListDemo items={data.comments}/>*/}
+  {/* <FormDemo/>*/}
+      {/*<FancyBorder color="blue">
+          <Post post={data} comments={data.comments}/>
+      </FancyBorder>
+        <FancyBorder color="green">
+            <ol>
+                <li>One</li>
+                <li>Two</li>
+                <li>Three</li>
+            </ol>
+        </FancyBorder>*/}
+        <Tab headers={headers}>
+            <div>
+                Page 1
+            </div>
+            <div>
+                Page 2
+            </div>
+            <div>
+                Page 3
+            </div>
+        </Tab>
     </div>
   );
 }

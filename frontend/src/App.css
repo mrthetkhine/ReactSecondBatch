@@ -42,3 +42,31 @@
 {
   margin:30px;
 }
+.fancy-blue
+{
+  border:1px solid blue;
+  min-height: 100px;
+  margin:50px;
+}
+.fancy-green
+{
+  border:1px solid green;
+  min-height: 100px;
+  margin:50px;
+}
+.tab-header
+{
+  display:inline;
+  width:100px;
+  height:50px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border:1px solid gray;
+  padding-left:50px;
+  padding-right:50px;
+}
+.tab-body
+{
+  border:1px solid gray;
+  min-height: 200px;
+}
