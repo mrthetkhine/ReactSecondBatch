@@ -13,6 +13,9 @@ import ListDemo from "./components/ListDemo";
 import FormDemo from "./components/form/FormDemo";
 import FancyBorder from "./components/pattern/composition/FanyBorder";
 import Tab from "./components/pattern/composition/Tab";
+import TableDemo from "./components/fragment/TableDemo";
+import ImportDemo,{ComponentOne} from "./components/importdemo/ImportDemo";
+import DomRef from "./components/ref/DomRef";
 function App() {
 
     let data = {
@@ -40,7 +43,7 @@ function App() {
      <Counter start={15}/>*/}
     {/*<TimeDisplay/>*/}
    {/* <ConditionalRendering/>*/}
-   {/* <ListDemo items={data.comments}/>*/}
+   {/* <TableDemo items={data.comments}/>*/}
   {/* <FormDemo/>*/}
       {/*<FancyBorder color="blue">
           <Post post={data} comments={data.comments}/>
@@ -52,7 +55,7 @@ function App() {
                 <li>Three</li>
             </ol>
         </FancyBorder>*/}
-        <Tab headers={headers}>
+        {/*<Tab headers={headers}>
             <div>
                 Page 1
             </div>
@@ -62,7 +65,11 @@ function App() {
             <div>
                 Page 3
             </div>
-        </Tab>
+        </Tab>*/}
+        {/*<TableDemo data={data.comments}/>*/}
+        {/*<ImportDemo/>
+        <ComponentOne/>*/}
+        <DomRef/>
     </div>
   );
 }
