@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { Suspense }  from "react";
 import Hello from './components/Hello';
 import VirtualDomConcept from "./components/VirutalDomConcept";
 import FunctionComponent from "./components/function/FunctionComponentDemo";
@@ -16,6 +17,17 @@ import Tab from "./components/pattern/composition/Tab";
 import TableDemo from "./components/fragment/TableDemo";
 import ImportDemo,{ComponentOne} from "./components/importdemo/ImportDemo";
 import DomRef from "./components/ref/DomRef";
+import ErrorBoundary from "./components/errorboundary/ErrorBoundary";
+import ErrorComponent from "./components/errorboundary/ErrorComponent";
+import Parent from "./components/context/Parent";
+import {DataContext} from "./components/context/DataContext";
+import ForwardRef from "./components/ref/ForwardRef";
+//import PointerEvent from "./components/pointerevent/PointerEvent";
+
+import loadingSpinner from "./components/hoc/loadingSpinner";
+import Page from "./components/hoc/Page";
+
+const PointerEvent = React.lazy(() => import('./components/pointerevent/PointerEvent'));
 function App() {
 
     let data = {
@@ -29,7 +41,8 @@ function App() {
         "one",
         "two",
         "three"
-    ]
+    ];
+    let PageWithSpinner = loadingSpinner(Page);
   return (
     <div>
         Hello from React
@@ -69,7 +82,18 @@ function App() {
         {/*<TableDemo data={data.comments}/>*/}
         {/*<ImportDemo/>
         <ComponentOne/>*/}
-        <DomRef/>
+       {/* <DomRef/>*/}
+       {/* <Suspense fallback={<div>Loading...</div>}>
+            <PointerEvent/>
+        </Suspense>*/}
+        {/*<ErrorBoundary>
+            <ErrorComponent/>
+        </ErrorBoundary>*/}
+        {/*<DataContext.Provider value={headers}>
+            <Parent/>
+        </DataContext.Provider>*/}
+       {/* <ForwardRef/>*/}
+        <PageWithSpinner loading={true}/>
     </div>
   );
 }
