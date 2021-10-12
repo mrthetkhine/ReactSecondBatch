@@ -9,7 +9,7 @@ const loadingSpinner = (AnotherComponent)=>{
             console.log("Props ",this.props);
             return(<div>
                 {
-                    this.props.loading? "Page is loading": <AnotherComponent></AnotherComponent>
+                    this.props.loading? "Page is loading": <AnotherComponent {...this.props}></AnotherComponent>
                 }
 
             </div>);

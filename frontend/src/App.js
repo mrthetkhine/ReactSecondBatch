@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { Suspense }  from "react";
+import React, {Suspense, useEffect} from "react";
 import Hello from './components/Hello';
 import VirtualDomConcept from "./components/VirutalDomConcept";
 import FunctionComponent from "./components/function/FunctionComponentDemo";
@@ -26,6 +26,11 @@ import ForwardRef from "./components/ref/ForwardRef";
 
 import loadingSpinner from "./components/hoc/loadingSpinner";
 import Page from "./components/hoc/Page";
+import HocDemo from "./components/hoc/HocDemo";
+import MouseTracker, {View1,View2} from "./components/render-props/MouseTracker";
+import ThirdParty from "./components/thirdparty/ThridParty";
+import JSXElement from "./components/jsx/JSXElement";
+import Mapper, {ChildElement} from "./components/jsx/Mapper";
 
 const PointerEvent = React.lazy(() => import('./components/pointerevent/PointerEvent'));
 function App() {
@@ -42,7 +47,14 @@ function App() {
         "two",
         "three"
     ];
-    let PageWithSpinner = loadingSpinner(Page);
+
+    let loading = true;
+    /*
+    setTimeout(()=>{
+        console.log("Loading completed");
+        loading = false;
+    },5000)
+    */
   return (
     <div>
         Hello from React
@@ -93,7 +105,11 @@ function App() {
             <Parent/>
         </DataContext.Provider>*/}
        {/* <ForwardRef/>*/}
-        <PageWithSpinner loading={true}/>
+       {/* <HocDemo/>*/}
+       {/*<MouseTracker view={mouse=><View2 mouse={mouse}/>}/>*/}
+      {/* <ThirdParty/>*/}
+    {/*  <JSXElement/>*/}
+        <Mapper data={data.comments} element={ChildElement} />
     </div>
   );
 }
