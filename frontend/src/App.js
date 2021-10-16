@@ -31,6 +31,9 @@ import MouseTracker, {View1,View2} from "./components/render-props/MouseTracker"
 import ThirdParty from "./components/thirdparty/ThridParty";
 import JSXElement from "./components/jsx/JSXElement";
 import Mapper, {ChildElement} from "./components/jsx/Mapper";
+import PureCounter from "./components/PureCounter";
+import ListOfWord from "./components/ListOfWord";
+import {PortalParent} from "./components/portal/PortalComponent";
 
 const PointerEvent = React.lazy(() => import('./components/pointerevent/PointerEvent'));
 function App() {
@@ -109,7 +112,10 @@ function App() {
        {/*<MouseTracker view={mouse=><View2 mouse={mouse}/>}/>*/}
       {/* <ThirdParty/>*/}
     {/*  <JSXElement/>*/}
-        <Mapper data={data.comments} element={ChildElement} />
+       {/* <Mapper data={data.comments} element={ChildElement}*/} />
+       {/* <PureCounter/>*/}
+       <ListOfWord/>
+       <PortalParent/>
     </div>
   );
 }

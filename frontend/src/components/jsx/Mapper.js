@@ -8,15 +8,16 @@ const Mapper=(props)=>{
     return (
         <>
         {
-            data.map(ele=><Element {...props}/>)
+            data.map(ele=><Element {...props} item={ele}/>)
     }
     </>
     );
 }
 export const ChildElement=(props)=>{
+    console.log("Item ",props.item);
     return (
         <div>
-            Data
+            {props.item.text}
         </div>
     );
 }
