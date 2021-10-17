@@ -34,6 +34,10 @@ import Mapper, {ChildElement} from "./components/jsx/Mapper";
 import PureCounter from "./components/PureCounter";
 import ListOfWord from "./components/ListOfWord";
 import {PortalParent} from "./components/portal/PortalComponent";
+import HookCounter from "./components/hook/HookCounter";
+import UseEffectDemo from "./components/hook/UseEffectDemo";
+import CleanUpDemo from "./components/hook/CleanUpDemo";
+import APICallDemo from "./components/hook/APICallDemo";
 
 const PointerEvent = React.lazy(() => import('./components/pointerevent/PointerEvent'));
 function App() {
@@ -60,7 +64,7 @@ function App() {
     */
   return (
     <div>
-        Hello from React
+
        {/* <Hello></Hello>
         <Hello/>*/}
        {/* <VirtualDomConcept></VirtualDomConcept>*/}
@@ -112,10 +116,13 @@ function App() {
        {/*<MouseTracker view={mouse=><View2 mouse={mouse}/>}/>*/}
       {/* <ThirdParty/>*/}
     {/*  <JSXElement/>*/}
-       {/* <Mapper data={data.comments} element={ChildElement}*/} />
+       {/* <Mapper data={data.comments} element={ChildElement}/> */}
        {/* <PureCounter/>*/}
-       <ListOfWord/>
-       <PortalParent/>
+      {/* <ListOfWord/>
+       <PortalParent/>*/}
+     {/*  <HookCounter/>*/}
+    {/*   <CleanUpDemo/>*/}
+    <APICallDemo/>
     </div>
   );
 }
