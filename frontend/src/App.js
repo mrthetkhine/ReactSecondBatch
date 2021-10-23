@@ -2,6 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {Suspense, useEffect} from "react";
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+
 import Hello from './components/Hello';
 import VirtualDomConcept from "./components/VirutalDomConcept";
 import FunctionComponent from "./components/function/FunctionComponentDemo";
@@ -42,6 +50,11 @@ import UseCallBackDemo from "./components/hook/UseCallBackDemo";
 import {UseRefDemo} from "./components/hook/UseRefDemo";
 import {ReduxCounter} from "./components/hook/redux/ReduxCounter";
 import ToDoRedux from "./components/hook/redux/ToDoRedux";
+import FormikDemo from "./components/form/FormikDemo";
+import AboutPage from "./pages/AboutPage";
+import UserPage from "./pages/UserPage";
+import HomePage from "./pages/HomePage";
+import MoviePage from "./pages/MoviePage";
 
 const PointerEvent = React.lazy(() => import('./components/pointerevent/PointerEvent'));
 function App() {
@@ -80,7 +93,7 @@ function App() {
     {/*<TimeDisplay/>*/}
    {/* <ConditionalRendering/>*/}
    {/* <TableDemo items={data.comments}/>*/}
-  {/* <FormDemo/>*/}
+
       {/*<FancyBorder color="blue">
           <Post post={data} comments={data.comments}/>
       </FancyBorder>
@@ -130,7 +143,73 @@ function App() {
    {/*<UseCallBackDemo/>*/}
    {/*<UseRefDemo/>*/}
   {/* <ReduxCounter/>*/}
-  <ToDoRedux/>
+  {/*<ToDoRedux/>*/}
+
+  {/*<FormDemo/>*/}
+  {/*<FormikDemo/>*/}
+        <Router>
+
+
+            <div>
+
+                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                    <a className="navbar-brand" href="#">Navbar</a>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav mr-auto">
+                            <li className="nav-item active">
+                                <Link to="/" className="nav-link">Home</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/about" className="nav-link">About</Link>
+                            </li>
+                            {/*<li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a className="dropdown-item" href="#">Action</a>
+                                <a className="dropdown-item" href="#">Another action</a>
+                                <div className="dropdown-divider"></div>
+                                <a className="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>*/}
+                            <li className="nav-item">
+                                <Link to="/users" className="nav-link">Users</Link>
+
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/movie/1" className="nav-link">Movies</Link>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                </nav>
+                {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+                <Switch>
+                    <Route path="/about">
+                        <AboutPage/>
+                    </Route>
+                    <Route path="/users">
+                        <UserPage/>
+                    </Route>
+                    <Route path="/movie/:id">
+                        <MoviePage/>
+                    </Route>
+                    <Route path="/">
+                        <HomePage/>
+                    </Route>
+                </Switch>
+            </div>
+        </Router>
     </div>
   );
 }
