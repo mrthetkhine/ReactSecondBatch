@@ -55,6 +55,11 @@ import AboutPage from "./pages/AboutPage";
 import UserPage from "./pages/UserPage";
 import HomePage from "./pages/HomePage";
 import MoviePage from "./pages/MoviePage";
+import LoginPage from "./pages/LoginPage";
+import ProtectedPage from "./pages/ProtectedPage";
+import PrivateRoute from "./components/routes/PrivateRoute";
+import auth from "./pages/auth";
+import PageNotFound from "./pages/PageNotFound";
 
 const PointerEvent = React.lazy(() => import('./components/pointerevent/PointerEvent'));
 function App() {
@@ -79,6 +84,7 @@ function App() {
         loading = false;
     },5000)
     */
+    let user= 'user';
   return (
     <div>
 
@@ -188,6 +194,10 @@ function App() {
                                 <Link to="/movie/1" className="nav-link">Movies</Link>
 
                             </li>
+                            <li className="nav-item">
+                                <Link to="/protected" className="nav-link">Protected</Link>
+
+                            </li>
                         </ul>
 
                     </div>
@@ -195,17 +205,27 @@ function App() {
                 {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
                 <Switch>
+                    <Route exact path="/">
+                        <HomePage/>
+                    </Route>
                     <Route path="/about">
                         <AboutPage/>
                     </Route>
+                    <Route path="/login">
+                        <LoginPage/>
+                    </Route>
+                    <PrivateRoute path="/protected"
+                            auth={ auth() && user=='admin'}>
+                        <ProtectedPage/>
+                    </PrivateRoute>
                     <Route path="/users">
                         <UserPage/>
                     </Route>
                     <Route path="/movie/:id">
                         <MoviePage/>
                     </Route>
-                    <Route path="/">
-                        <HomePage/>
+                    <Route path="*">
+                        <PageNotFound/>
                     </Route>
                 </Switch>
             </div>
