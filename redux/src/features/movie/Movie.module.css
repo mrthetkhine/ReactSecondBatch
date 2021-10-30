@@ -1,0 +1,12 @@
+.movie{
+    min-height: 50px;
+    border-radius: 10px;
+    border:1px solid lightgray;
+    margin-left:100px;
+    margin-right:100px;
+    margin-bottom: 10px;
+}
+.movieTitle
+{
+    font-weight: bold;
+}
