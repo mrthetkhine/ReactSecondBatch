@@ -2,7 +2,8 @@ import {useState} from "react";
 import {Button, Modal} from "react-bootstrap";
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-
+import {addMovie, apiSaveMovie, Movie} from './movieSlice';
+import { useAppSelector, useAppDispatch } from '../../app/hooks';
 const MovieSchema = Yup.object().shape({
     title: Yup.string()
         .min(2, 'Too Short!')
@@ -16,6 +17,7 @@ const MovieSchema = Yup.object().shape({
 });
 function MovieForm(props:any)
 {
+    const dispatch = useAppDispatch();
     let handleClose = props.handleClose;
     return <div>
         <Formik
@@ -29,6 +31,16 @@ function MovieForm(props:any)
                 // same shape as initial values
                 console.log("Handle Close ",handleClose);
                 console.log(values);
+                let movie:Movie = {
+                 /*   _id: '3',*/
+                    title: values.title,
+                    director:{
+                        name : values.director,
+                        phoneNo:'',
+                    },
+                    year: Number(values.year)
+                }
+                dispatch(apiSaveMovie(movie));
                 handleClose();
             }}
         >
@@ -50,7 +62,7 @@ function MovieForm(props:any)
                            value={values.title}
                     />
                     {errors.title && touched.title ? (
-                        <div>{errors.title}</div>
+                        <div className="alert alert-danger">{errors.title}</div>
                     ) : null}
                     <label>Director</label>
                     <input type="text"
@@ -62,7 +74,7 @@ function MovieForm(props:any)
                            value={values.director}
                     />
                     {errors.director && touched.director ? (
-                        <div>{errors.director}</div>
+                        <div className="alert alert-danger">{errors.director}</div>
                     ) : null}
                     <label>Year</label>
                     <input type="text"
@@ -73,7 +85,7 @@ function MovieForm(props:any)
                            onBlur={handleBlur}
                            value={values.year}
                     />
-                    {errors.year && touched.year ? <div>{errors.year}</div> : null}
+                    {errors.year && touched.year ? <div className="alert alert-danger">{errors.year}</div> : null}
                     <button type="submit"
                         className="btn btn-primary">Submit</button>
                 </Form>

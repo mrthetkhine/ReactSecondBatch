@@ -24,6 +24,7 @@ router.get('/:id', async (req, res)=> {
     }
 });
 router.post('/', async (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     const newMovie = new Movies(req.body);
     try {
         const saveMovie = await newMovie.save();
