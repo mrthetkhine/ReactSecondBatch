@@ -1,15 +1,21 @@
 import styles from './Movie.module.css';
-import {Movie} from './movieSlice';
+import {apiDeleteMovie, apiSaveMovie, Movie} from './movieSlice';
+import { useAppSelector, useAppDispatch } from '../../app/hooks';
+
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import NewOrUpdateMovieDialog from "./NewOrUpdateMovieDialog";
 const MySwal = withReactContent(Swal);
+
 
 export default function MovieUi(props:any) {
 
+    let dispatch = useAppDispatch();
     let movie:Movie = props.movie;
     console.log("Movie ",movie);
+    //console.log("Api delete movie ",apiDeleteMovie);
     let deleteHandler = ()=>{
-        console.log("Delete handler");
+
         MySwal.fire({
             title: <p>Are you sure you want to delete?</p>,
             showCancelButton: true,
@@ -18,10 +24,13 @@ export default function MovieUi(props:any) {
         }).then((result) => {
            if(result.isConfirmed)
            {
-               alert("Clicked confirmed");
+               console.log("Delete handler ",movie);
+               dispatch(apiDeleteMovie(movie));
+               console.log("After api Delete called");
            }
         })
     };
+
     return (<div
 
             className={styles.movie}>
@@ -33,6 +42,7 @@ export default function MovieUi(props:any) {
                     onClick={deleteHandler}>
                 Delete
             </button>
+        <NewOrUpdateMovieDialog movie={movie}/>
     </div>);
 
 }

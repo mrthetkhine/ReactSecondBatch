@@ -11,3 +11,9 @@ export function getAllMovie(){
 export function saveMovie(movie:Movie){
     return axios.post(API,movie);
 }
+export function deleteMovie(movie:Movie){
+    return axios.delete(API+"/"+movie._id);
+}
+export function updateMovie(movie:Movie){
+    return axios.patch(API+"/"+movie._id,movie);
+}

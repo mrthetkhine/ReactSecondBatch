@@ -2,7 +2,7 @@ import {useState} from "react";
 import {Button, Modal} from "react-bootstrap";
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import {addMovie, apiSaveMovie, Movie} from './movieSlice';
+import {addMovie, apiSaveMovie,apiUpdateMovie, Movie} from './movieSlice';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 const MovieSchema = Yup.object().shape({
     title: Yup.string()
@@ -19,20 +19,24 @@ function MovieForm(props:any)
 {
     const dispatch = useAppDispatch();
     let handleClose = props.handleClose;
+
+    let propMovie = props.movie;
+    let initValues ={
+        _id : propMovie? propMovie._id:'',
+        title:  propMovie? propMovie.title:'',
+        director:  propMovie? propMovie.director.name:'',
+        year:  propMovie? propMovie.year:'',
+    }
     return <div>
         <Formik
-            initialValues={{
-                title: '',
-                director: '',
-                year: '',
-            }}
+            initialValues={initValues}
             validationSchema={MovieSchema}
             onSubmit={values => {
                 // same shape as initial values
                 console.log("Handle Close ",handleClose);
                 console.log(values);
                 let movie:Movie = {
-                 /*   _id: '3',*/
+                    _id: values._id,
                     title: values.title,
                     director:{
                         name : values.director,
@@ -40,7 +44,17 @@ function MovieForm(props:any)
                     },
                     year: Number(values.year)
                 }
-                dispatch(apiSaveMovie(movie));
+
+                if(propMovie)//update
+                {
+                    console.log("Update movie ",movie);
+                    dispatch(apiUpdateMovie(movie));
+                }
+                else //new
+                {
+                    dispatch(apiSaveMovie(movie));
+                }
+
                 handleClose();
             }}
         >
@@ -93,7 +107,8 @@ function MovieForm(props:any)
         </Formik>
     </div>
 }
-export default function NewMovieDialog() {
+export default function NewOrUpdateMovieDialog(props:any) {
+    let propMovie = props.movie;
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -102,15 +117,16 @@ export default function NewMovieDialog() {
     return (
         <>
             <Button variant="primary" onClick={handleShow}>
-                New Movie
+                {propMovie?'Update Movie ': 'New Movie'}
             </Button>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>New Movie</Modal.Title>
+                    <Modal.Title>{propMovie?'Update Movie ': 'New Movie'}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                   <MovieForm handleClose={handleClose}/>
+                   <MovieForm handleClose={handleClose}
+                              movie={propMovie}/>
 
                 </Modal.Body>
                 {/*<Modal.Footer>

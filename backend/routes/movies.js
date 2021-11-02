@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
 });
 router.patch('/:id', async (req, res) => {
     try {
-        const movie = await Movies.findByIdAndUpdate(req.params.id, req.body);
+        const movie = await Movies.findByIdAndUpdate(req.params.id, req.body,{new: true});
         if(!movie) throw Error('Something went wrong while updating the post');
         await res.status(200).json({success: true,movie:movie});
     }catch(err) {

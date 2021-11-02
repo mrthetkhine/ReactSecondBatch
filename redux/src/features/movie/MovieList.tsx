@@ -6,7 +6,7 @@ import {
 } from './movieSlice';
 import {selectTodo} from "../todo/todoSlice";
 import MovieUi from "./MovieUi";
-import NewMovieDialog from "./NewMovieDialog";
+import NewOrUpdateMovieDialog from "./NewOrUpdateMovieDialog";
 
 export default function MovieList()
 {
@@ -19,7 +19,7 @@ export default function MovieList()
     const movies = useAppSelector(selectMovie);
     return(<div>
 
-        <NewMovieDialog/>
+        <NewOrUpdateMovieDialog/>
         {
             movies.map(movie=> <MovieUi
                     key={movie._id}
