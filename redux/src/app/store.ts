@@ -2,12 +2,14 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
 import todoReducer from '../features/todo/todoSlice';
 import movieReducer from '../features/movie/movieSlice';
+import reviewReducer from '../features/review/reviewSlice';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     todo: todoReducer,
-    movies:movieReducer
+    movies:movieReducer,
+    review: reviewReducer
   },
 });
 

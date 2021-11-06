@@ -129,5 +129,6 @@ export const movieSlice = createSlice({
 });
 export const {addMovie} = movieSlice.actions;
 export const selectMovie = (state: RootState) => state.movies.items;
+export const selectMovieById =  (state: RootState,movieId:string) => state.movies.items.filter(movie=>movie._id ==movieId)[0];
 
 export default movieSlice.reducer;

@@ -1,9 +1,12 @@
 import styles from './Movie.module.css';
-import {apiDeleteMovie, apiSaveMovie, Movie} from './movieSlice';
+
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
+import { useNavigate } from "react-router-dom";
 
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+
+import {apiDeleteMovie, apiSaveMovie, Movie} from './movieSlice';
 import NewOrUpdateMovieDialog from "./NewOrUpdateMovieDialog";
 const MySwal = withReactContent(Swal);
 
@@ -12,6 +15,8 @@ export default function MovieUi(props:any) {
 
     let dispatch = useAppDispatch();
     let movie:Movie = props.movie;
+    let navigate = useNavigate();
+
     console.log("Movie ",movie);
     //console.log("Api delete movie ",apiDeleteMovie);
     let deleteHandler = ()=>{
@@ -30,7 +35,10 @@ export default function MovieUi(props:any) {
            }
         })
     };
-
+    let detailHandler = ()=>{
+        console.log("Go to movie detail");
+        navigate(`/movie-detail/${movie._id}`);
+    };
     return (<div
 
             className={styles.movie}>
@@ -42,7 +50,12 @@ export default function MovieUi(props:any) {
                     onClick={deleteHandler}>
                 Delete
             </button>
-        <NewOrUpdateMovieDialog movie={movie}/>
+            <NewOrUpdateMovieDialog movie={movie}/>
+            <button type="button"
+                    className="btn btn-primary"
+                    onClick={detailHandler}>
+            Details
+            </button>
     </div>);
 
 }
