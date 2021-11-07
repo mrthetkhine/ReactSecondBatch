@@ -4,6 +4,7 @@ import {useAppDispatch, useAppSelector} from "../app/hooks";
 import {useEffect} from "react";
 import {apiGetAllReview,selectReview} from "../features/review/reviewSlice";
 import ReviewUI from "../features/review/ReviewUI";
+import styles from "../features/movie/Movie.module.css";
 
 export default function MovieDetailPage(props:any)
 {
@@ -18,23 +19,26 @@ export default function MovieDetailPage(props:any)
     },[]);
 
     console.log("Movie ",movie);
-    return (<div>
-
+    return (
         <div>
-            Title: {movie.title}
-        </div>
-        <div>
-            Director: {movie.director.name}
-        </div>
-        <div>
-            Year: {movie.year}
-        </div>
-        <div>
-            {
-                reviews.map(review=> <ReviewUI
-                    key={review._id}
-                    review={review}/>)
-            }
-        </div>
+            <div
+                    className={styles.movie}>
+                <div className={styles.movieTitle}>
+                    Title: {movie.title}
+                </div>
+                <div>
+                    Director: {movie.director.name}
+                </div>
+                <div>
+                    Year: {movie.year}
+                </div>
+            </div>
+            <div>
+                {
+                    reviews.map(review=> <ReviewUI
+                        key={review._id}
+                        review={review}/>)
+                }
+            </div>
     </div>)
 }

@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import {useAuthentication} from "./services/authService";
 import {
     BrowserRouter as Router,
     Route,
@@ -12,10 +13,14 @@ import {
 import TodoListUI from "./features/todo/TodoListUI";
 import MovieList from "./features/movie/MovieList";
 import MovieDetailPage from "./pages/MovieDetailPage";
+import LoginPage from "./pages/LoginPage";
+import PrivateRoute from "./components/routes/PrivateRoute";
 
 function App() {
+
   return (
     <div className="App">
+
         <Router>
             <div>
                 <nav>
@@ -36,9 +41,21 @@ function App() {
                     <Route path="/" element={<MovieList/>}>
 
                     </Route>
-                    <Route path="/movie-detail/:movieId" element={<MovieDetailPage />}>
+                    <Route path="/login" element={<LoginPage/>}>
 
                     </Route>
+                    <Route
+                        path="/movie-detail/:movieId"
+                        element={
+                            <PrivateRoute
+                                redirectTo={"/login"}
+                                isAuth={useAuthentication()}>
+                                <MovieDetailPage />
+                            </PrivateRoute>
+                        }
+                    />
+
+
 
                 </Routes>
             </div>
