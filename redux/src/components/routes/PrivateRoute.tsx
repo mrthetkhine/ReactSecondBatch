@@ -17,6 +17,6 @@ export default  function PrivateRoute({ children,
                           isAuth,
                           path, ...props }:any)  {
 
-    console.log('Is authen ',isAuth);
+    console.log('Is auth ',isAuth, ' redirectTo ',redirectTo);
     return isAuth ? children : <Navigate to={redirectTo} />;
 }

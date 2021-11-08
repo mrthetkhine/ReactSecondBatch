@@ -15,6 +15,8 @@ import MovieList from "./features/movie/MovieList";
 import MovieDetailPage from "./pages/MovieDetailPage";
 import LoginPage from "./pages/LoginPage";
 import PrivateRoute from "./components/routes/PrivateRoute";
+import HomePage from "./pages/HomePage";
+import LogoutPage from "./pages/LogoutPage";
 
 function App() {
 
@@ -23,37 +25,65 @@ function App() {
 
         <Router>
             <div>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/movie-detail">Movie Detail</Link>
-                        </li>
+                <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
-                    </ul>
+
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav mr-auto">
+                            <li className="nav-item active">
+                                <Link className="nav-link" to="/">Home</Link>
+                            </li>
+                            <li className="nav-item active">
+                                <Link className="nav-link" to="/login?redirectTo=/">Login</Link>
+                            </li>
+                            {
+                                useAuthentication()
+                                && <li className="nav-item">
+                                    <Link className="nav-link" to="/movie-list">Movie List</Link>
+                                    </li>
+                            }
+
+                            {useAuthentication() && <li className="nav-item">
+                                <Link className="nav-link" to="/logout">Logout</Link>
+                            </li>}
+
+
+                        </ul>
+
+                    </div>
                 </nav>
 
                 {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
                 <Routes>
-                    <Route path="/" element={<MovieList/>}>
+                    <Route path="/" element={<HomePage/>}>
 
                     </Route>
                     <Route path="/login" element={<LoginPage/>}>
 
                     </Route>
+                    <Route path="/movie-list" element={
+                        <PrivateRoute
+                        redirectTo={"/login?redirectTo=/movie-list"}
+                        isAuth={useAuthentication()}>
+                        <MovieList />
+                    </PrivateRoute>}>
+
+                    </Route>
+
                     <Route
                         path="/movie-detail/:movieId"
                         element={
                             <PrivateRoute
-                                redirectTo={"/login"}
+                                redirectTo={"/login?redirectTo=/movie-detail/:movieId"}
                                 isAuth={useAuthentication()}>
                                 <MovieDetailPage />
                             </PrivateRoute>
                         }
                     />
+                    <Route path="/logout" element={<LogoutPage/>}>
+
+                    </Route>
 
 
 

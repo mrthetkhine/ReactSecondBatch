@@ -1,10 +1,12 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Button, Modal} from "react-bootstrap";
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import {apiSaveMovie, apiUpdateMovie, Movie} from "../features/movie/movieSlice";
 import {useAppDispatch} from "../app/hooks";
 import {apiLogin} from "../features/auth/authSlice";
+import {useAuthentication} from "../services/authService";
+import {useNavigate,useParams,useLocation} from "react-router-dom";
 const LoginSchema = Yup.object().shape({
     username: Yup.string()
         .required('Required'),
@@ -13,7 +15,31 @@ const LoginSchema = Yup.object().shape({
 
 });
 export default function LoginPage() {
+    let auth = useAuthentication();
     const dispatch = useAppDispatch();
+    let navigate = useNavigate();
+
+    let {search} = useLocation();
+    let redirectTo = "/";
+    if(search && search.indexOf("=")!=-1)
+    {
+        redirectTo = search.substring(search.indexOf("=")+1);
+    }
+
+    console.log("Login page redirectTo ",redirectTo);
+    //console.log("Login Auth ",auth);
+
+    useEffect(()=>{
+        console.log("Run effect");
+        if(auth)
+        {
+            console.log("Check");
+            navigate(redirectTo);
+            console.log("After navigate");
+        }
+    })
+
+
     let initValues ={
         username:'',
         password:''
